@@ -1,0 +1,101 @@
+.box1{
+	border:1px solid #D55256;
+	margin: 20px 45px 20px 45px;
+	border-radius: 10px;
+	
+}
+
+#homebox1 p{
+	font: 20px bold Tahoma;
+	color: #D55256;
+
+}
+
+#expchat{
+	margin:20px 10px 50px 10px;
+	border-top:13px solid #D55256;
+	
+}
+
+#expchat h2{
+	width: 30%;
+	margin: 50px 20px 50px 20px;
+	font: 40px bold Arial grey;
+	border-bottom: 5px solid grey;
+
+}
+
+#expchat p{
+	font: 20px bold Arial;
+	margin-bottom: 20px;
+}
+#expchat h3{
+	font: 30px bold Arial;
+	margin:10px;
+	margin-top: 20px;
+}
+
+#expchat hr{
+	height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+.expimg{
+	height: 160px;
+	width: 160px;
+	border:2px solid #D55256;
+}
+
+section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#carouselfeedback{
+background-color: #003442;
+color: white;
+margin:70px 0px 70px 0px;
+}
+
+.quote {
+    color: rgba(0,0,0,.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#fade-quote-carousel.carousel {
+  padding-bottom: 60px;
+}
+#fade-quote-carousel.carousel .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-inner .active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-indicators {
+  bottom: 10px;
+}
+#fade-quote-carousel.carousel .carousel-indicators > li {
+  background-color: #e84a64;
+  border: none;
+}
+#fade-quote-carousel blockquote {
+    text-align: center;
+    border: none;
+}
+#fade-quote-carousel .profile-circle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 100px;
+}
+
+#feedbackbtn{
+	margin:20px;
+}
+

@@ -5,13 +5,14 @@ module.exports = {
     lib: {
       css: [
         // bower:css
-        'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css'
+        'public/lib/bootstrap/dist/css/bootstrap.css'
         // endbower
       ],
       js: [
         // bower:js
+        'public/lib/bootstrap/dist/js/jquery.js',
         'public/lib/angular/angular.js',
+        'public/lib/bootstrap/dist/js/bootstrap.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-messages/angular-messages.js',
