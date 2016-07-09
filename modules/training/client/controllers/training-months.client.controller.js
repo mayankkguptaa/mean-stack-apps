@@ -10,38 +10,34 @@
   function TrainingMonthsController(CategoriesService, months, _) {
     var vm = this;
 
-    vm.categories = categoriesList();
+    vm.categories = [];
     vm.months = months;
     vm.choices = vm.months;
     vm.selectCategory = selectCategory;
     vm.chosen = [];
     vm.selectError = false;
 
-    function categoriesList() {
-      var categories = CategoriesService.query();
+    CategoriesService.query(function (res) {
+      _.map(res, function (val) {
+        val.check = false;
+        if (vm.choices === '6') {
+          val.check = true;
+        }
+        this.push(val);
+      }, vm.categories);
+    });
 
-      _.map(categories, function (value, index) {
-        return _.extend(value, { 'check': true});
-      });
-
-      return categories;
-    }
-
-/*
-    function selectCategory(i) {
-      if (vm.chosen.length <= vm.choices && vm.categories[i].check) {
-        vm.categories[i].check = true;
-        vm.chosen.push(vm.categories[i]);
-      } else if (vm.categories[i].check) {
-        vm.categories[i].check = false;
-        vm.chosen.splice(vm.chosen.indexOf(vm.categories[i]), 1);
+    function selectCategory(category) {
+      console.log(vm.chosen.length);
+      if (vm.chosen.length < vm.choices && !category.check) {
+        category.check = true;
+        vm.chosen.push(category);
+      } else if (category.check) {
+        category.check = false;
+        vm.chosen.splice(vm.chosen.indexOf(category), 1);
       } else {
         vm.selectError = true;
       }
-    }
-*/
-    function selectCategory(category) {
-      category.check = true;
     }
   }
 }());

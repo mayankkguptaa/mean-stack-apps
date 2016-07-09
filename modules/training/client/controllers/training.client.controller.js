@@ -8,9 +8,9 @@
   TrainingController.$inject = ['$scope', '$state', 'Authentication'];
 
   function TrainingController($scope, $state, Authentication) {
-    var _this = this;
+    var vm = this;
 
-    _this.courses = [{
+    vm.courses = [{
       months: 1,
       choices: '1'
     }, {
