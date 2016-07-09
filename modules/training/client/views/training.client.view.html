@@ -1,0 +1,13 @@
+<section>
+  <div class="row">
+    <div class="col-md-4" ng-repeat="course in vm.courses" style="padding:10px">
+      <div class="well" ui-sref="training.months({ months: course.months})">
+        <h3>Course {{$index+1}}</h3>
+        <p>
+          This course is for {{course.months}} month<span ng-if="course.months!==1">s</span>.
+          Out of the given 6 categories, you can learn any {{course.choices}}.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

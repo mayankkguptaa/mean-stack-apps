@@ -10,16 +10,28 @@ var mongoose = require('mongoose'),
  * Category Schema
  */
 var CategorySchema = new Schema({
-  name: String,
-  description: String,
+  name: {
+    type: String,
+    lowercase: true,
+    trim: true,
+    required: 'Name of the category is required'
+  },
+  description: {
+    type: String,
+    trim: true,
+    required: 'Description is required'
+  },
   pics: [{
     type: String
   }],
-  price: Number,
-  material: [{
-    type: Schema.ObjectId,
-    ref: 'Material'
-  }]
+  price: {
+    type: Number,
+    required: 'Price is required'
+  },
+  created: {
+    type: Date,
+    default: Date.now()
+  }
 });
 
 mongoose.model('Category', CategorySchema);

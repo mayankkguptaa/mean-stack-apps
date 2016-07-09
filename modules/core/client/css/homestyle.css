@@ -2,7 +2,6 @@
 	border:1px solid #D55256;
 	margin: 20px 45px 20px 45px;
 	border-radius: 10px;
-	
 }
 
 #homebox1 p{
@@ -14,7 +13,7 @@
 #expchat{
 	margin:20px 10px 50px 10px;
 	border-top:13px solid #D55256;
-	
+
 }
 
 #expchat h2{
@@ -22,7 +21,6 @@
 	margin: 50px 20px 50px 20px;
 	font: 40px bold Arial grey;
 	border-bottom: 5px solid grey;
-
 }
 
 #expchat p{
@@ -68,7 +66,7 @@ margin:70px 0px 70px 0px;
 #fade-quote-carousel.carousel .carousel-inner .item {
   opacity: 0;
   -webkit-transition-property: opacity;
-      -ms-transition-property: opacity;
+	  -ms-transition-property: opacity;
           transition-property: opacity;
 }
 #fade-quote-carousel.carousel .carousel-inner .active {
