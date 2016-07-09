@@ -1,0 +1,21 @@
+<section>
+  <div class="row well text-center">
+    <h2 class="text-uppercase">{{vm.months}} month<span ng-if="vm.months!=='1'">s</span> </h2>
+    <p>You can select any {{vm.choices}} of the given choice of categories to learn from</p>
+  </div>
+  <div class="row">
+    <div class="alert alert-danger" ng-if="selectError">
+      <strong>Error!</strong> You cannot select more than {{vm.choices}} categories.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6" style="padding: 10px" ng-repeat="category in vm.categories">
+      <div class="panel-group">
+        <div class="panel panel-info" ng-click="selectCategory(category)" ng-class="{ 'panel-danger': category.check }">
+          <div class="panel-heading text-capitalize" ng-bind="category.index"></div>
+          <div class="panel-body" ng-bind="category.description"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

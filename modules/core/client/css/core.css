@@ -41,3 +41,7 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+#logo-img{
+	height: 30px;
+	width: 70px;
+}
