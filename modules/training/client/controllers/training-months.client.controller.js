@@ -21,7 +21,7 @@
       var categories = CategoriesService.query();
 
       _.map(categories, function (value, index) {
-        return _.extend(value, { 'check': true});
+        return _.extend(value, { 'check': true });
       });
 
       return categories;
