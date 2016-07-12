@@ -3,8 +3,8 @@
 	display: table;
 	line-height: 10px;
 	font-size: 0;
-	background: #000;
-	margin: 0px 0px 0px 50px;
+	background: #003442;
+	margin: 0px 0px 0px 40px;
 	float: left;
 	width: 640px;
 	height: 360px;
@@ -14,8 +14,8 @@
 }
 #video_container {
 	position: relative;
-	border-right: 10px solid black;
-	border-left: 10px solid black;
+	border-right: 10px solid #003442;
+	border-left: 10px solid #003442;
 }
 #video_player div, #video_player figcaption {
 	display: table-cell;
