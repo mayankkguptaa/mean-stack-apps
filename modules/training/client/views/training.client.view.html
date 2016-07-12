@@ -4,17 +4,57 @@
 
 
 <section>
+
+  <div class="row">
+
+    <div class="hwtstyle">
+      <h1 >How We Teach ?</h1>
+    <hr/>
+      <p>
+        A few lines about how we are going to teach in our courses ...(not more than 3)
+      </p>
+    </div>
+
+
+    <figure id="video_player">
+      <div id="video_container">
+        <video controls poster="modules/training/client/img/course1month.jpg">
+          <source src="modules/training/client/demovideos/abc1.webm" type="video/webm">
+        </video>
+      </div>
+      <figcaption>
+        <a href="modules/training/client/demovideos/abc1.webm" class="currentvid">
+          <img src="modules/training/client/img/course1month.jpg" alt="Athabasca Glacier">
+        </a>
+        <a href="modules/training/client/demovideos/abc2.webm" >
+          <img src="modules/training/client/img/course1month.jpg" alt="Athabasca Lake">
+        </a>
+        <a href="modules/training/client/demovideos/abc3.webm">
+          <img src="modules/training/client/img/course1month.jpg" alt="Mountain">
+        </a>
+        <a href="modules/training/client/demovideos/abc4.webm">
+          <img src="modules/training/client/img/course1month.jpg" alt="Mountain">
+        </a>
+
+
+
+      </figcaption>
+    </figure>
+
+
+  </div>
+
+
   <div class="row">
     <div >
       <h1 class="courseheading">COURSES</h1>
-
     </div>
     <hr/>
     <div class="col-md-4 coursesstyle" ng-repeat="course in vm.courses" style="padding:10px">
       <div class="well wellcourse" ui-sref="training.months({ months: course.months})">
 
-        <h2 align="center" >Course {{$index+1}}</h2>
-        <img src="modules/training/client/img/course{{course.months}}months.jpg" align="center">
+        <h2 align="center" >{{course.months}} Month<span ng-if="course.months!==1">s</span> Course</h2>
+        <img src="modules/training/client/img/course{{course.months}}month.jpg" align="center">
 
         <p>
           This course is for {{course.months}} month<span ng-if="course.months!==1">s</span>.
