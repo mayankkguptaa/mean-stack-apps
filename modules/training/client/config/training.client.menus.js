@@ -9,8 +9,23 @@
 
   function menuConfig(menuService) {
     menuService.addMenuItem('topbar', {
+      title: 'Home',
+      state: 'home',
+      roles: ['*']
+    });
+    menuService.addMenuItem('topbar', {
       title: 'Training',
       state: 'training.home',
+      roles: ['*']
+    });
+    menuService.addMenuItem('topbar', {
+      title: 'Examination',
+      state: 'examination.home',
+      roles: ['*']
+    });
+    menuService.addMenuItem('topbar', {
+      title: 'Recruitment',
+      state: 'recruitment.home',
       roles: ['*']
     });
   }
