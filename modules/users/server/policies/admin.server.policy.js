@@ -20,6 +20,21 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/users/:userId',
       permissions: '*'
+    }, {
+      resources: '/api/experts',
+      permissions: '*'
+    }, {
+      resources: '/api/experts/:expertId',
+      permissions: '*'
+    }]
+  }, {
+    roles: ['user'],
+    allows: [{
+      resources: '/api/experts/:expertId',
+      permissions: ['get']
+    }, {
+      resources: '/api/experts',
+      permissions: ['get']
     }]
   }]);
 };
