@@ -1,0 +1,53 @@
+.hwtstyle h1 {
+	color: #D55256;
+	margin: 0px 10px 0px 10px;
+	font-size: 40px;
+}
+
+.hwtstyle p {
+	font-size: 20px;
+	text-indent: 20px;
+	margin: 0px 10px 20px 10px;
+	color: #7f7f7f;
+}
+
+hr {
+	height: 12px;
+	border: 0;
+	box-shadow: inset 0 12px 12px -12px rgba(213, 82, 86, 0.9);
+	margin: 0px 10px 0px 10px;
+}
+
+.courseheading{
+	color: #D55256;
+	font-size: 40px;
+	text-indent: 10px;
+	margin-top: 60px;
+
+}
+
+.coursesstyle img{
+	max-width: 315px;
+	max-height: 150px;
+	margin-bottom: 20px;
+}
+
+.coursesstyle h2{
+	color: #dc5559;
+	margin-bottom: 20px;
+	font-size: 35px;
+
+}
+.coursesstyle p {
+font-size: 20px;
+	color: white;
+}
+
+.wellcourse{
+	display: block;
+	margin: 10px;
+	background:-webkit-linear-gradient(bottom,#D55256,white);
+}
+
+
+
