@@ -2,17 +2,17 @@
   'use strict';
 
   angular
-    .module('core.admin')
+    .module('core.experts')
     .run(menuConfig);
 
   menuConfig.$inject = ['menuService'];
 
   function menuConfig(menuService) {
     menuService.addMenuItem('topbar', {
-      title: 'Admin',
-      state: 'admin',
+      title: 'Experts Panel',
+      state: 'experts',
       type: 'dropdown',
-      roles: ['admin'],
+      roles: ['expert'],
       position: 5
     });
   }

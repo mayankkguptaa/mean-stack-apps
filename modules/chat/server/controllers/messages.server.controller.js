@@ -66,12 +66,13 @@ exports.createChatRoom = function (req, res) {
 };
 
 exports.threadByName = function (req, res, next, name) {
-  Thread.findOne({ roomName: name }).populate('user', 'expert').exec(function (err, thread) {
+  Thread.findOne({ roomName: name }).populate(['user', 'expert']).exec(function (err, thread) {
     if (err) {
       next(err);
     } else if (!thread) {
-      thread = new Thread();
-      thread.user = req.user;
+      return res.status(404).send({
+        message: 'No Chat Room with that name has been found'
+      });
     }
 
     req.thread = thread;

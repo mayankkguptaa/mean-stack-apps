@@ -1,5 +1,6 @@
 <!-- The chat view -->
 <section>
+  <div class="col-xs-12 col-md-offset-4 col-md-4 text-danger" ng-if="vm.errorText">Error</div>
   <!-- The message form -->
   <form class="col-xs-12 col-md-offset-4 col-md-4" ng-submit="vm.sendMessage();">
     <fieldset class="row">

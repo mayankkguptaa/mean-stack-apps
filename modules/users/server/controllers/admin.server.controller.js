@@ -6,6 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
+  Expert = mongoose.model('Expert'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
@@ -19,7 +20,12 @@ exports.read = function (req, res) {
  * Update a User
  */
 exports.update = function (req, res) {
-  var user = req.model;
+  var user = req.model,
+    checkExpert = false;
+
+  if (user.roles.indexOf('expert') !== -1) {
+    checkExpert = true;
+  }
 
   // For security purposes only merge these parameters
   user.firstName = req.body.firstName;
@@ -34,7 +40,45 @@ exports.update = function (req, res) {
       });
     }
 
-    res.json(user);
+    if (user.roles.indexOf('expert') !== -1 && !checkExpert) {
+      var expert = new Expert;
+
+      expert.user = user.id;
+
+      expert.save(function (err) {
+        if (err) {
+          return res.statusCode(400).send({
+            message: errorHandler.getErrorMessage(err)
+          });
+        }
+
+        res.json(user);
+      });
+    } else if (user.roles.indexOf('expert') === -1 && checkExpert) {
+      Expert.findOne({ user: user.id }).exec(function (err, expert) {
+        if (err) {
+          return res.statusCode(400).send({
+            message: errorHandler.getErrorMessage(err)
+          });
+        } else if (!expert) {
+          return res.statusCode(400).send({
+            message: 'No expert found'
+          });
+        }
+
+        expert.remove(function (err) {
+          if (err) {
+            return res.status(400).send({
+              message: errorHandler.getErrorMessage(err)
+            });
+          }
+
+          res.json(user);
+        });
+      });
+    } else {
+      res.json(user);
+    }
   });
 };
 
@@ -51,7 +95,23 @@ exports.delete = function (req, res) {
       });
     }
 
-    res.json(user);
+    Expert.findOne({ user: user.id }).exec(function (err, expert) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      }
+
+      expert.remove(function (err) {
+        if (err) {
+          return res.status(400).send({
+            message: errorHandler.getErrorMessage(err)
+          });
+        }
+
+        res.json(user);
+      });
+    });
   });
 };
 

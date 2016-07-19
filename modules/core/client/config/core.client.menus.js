@@ -33,5 +33,12 @@
       title: 'Change Password',
       state: 'settings.password'
     });
+
+    menuService.addMenuItem('topbar', {
+      title: 'Home',
+      state: 'home',
+      roles: ['*'],
+      position: 0
+    });
   }
 }());

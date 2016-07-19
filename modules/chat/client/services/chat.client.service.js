@@ -2,12 +2,12 @@
   'use strict';
 
   angular
-    .module('chat.service').factory('MessagesService', MessagesService);
+    .module('chat.services').factory('MessagesService', MessagesService);
 
   MessagesService.$inject = ['$resource'];
 
   function MessagesService($resource) {
-    return $resource('api/messages/:roomName', {
+    return $resource('api/chat/messages/:roomName', {
       roomName: '@_name'
     }, {
       update: {
@@ -22,12 +22,12 @@
   }
 
   angular
-    .module('chat.service').factory('ThreadsService', ThreadsService);
+    .module('chat.services').factory('ThreadsService', ThreadsService);
 
   ThreadsService.$inject = ['$resource'];
 
   function ThreadsService($resource) {
-    return $resource('api/chatCreate/:expertId', {
+    return $resource('api/chat/experts/:expertId', {
       expertId: '@_id'
     });
   }
