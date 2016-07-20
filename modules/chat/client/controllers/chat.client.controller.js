@@ -5,12 +5,12 @@
     .module('chat')
     .controller('ChatController', ChatController);
 
-  ChatController.$inject = ['$scope', '$state', 'Authentication', 'Socket'];
+  ChatController.$inject = ['$scope', '$state', 'Authentication', 'Socket', 'ChatResolve', 'MessagesService'];
 
-  function ChatController($scope, $state, Authentication, Socket) {
+  function ChatController($scope, $state, Authentication, Socket, Chat, MessagesService) {
     var vm = this;
 
-    vm.messages = [];
+    vm.messages = MessagesService.get({ roomName: Chat.roomName });
     vm.messageText = '';
     vm.sendMessage = sendMessage;
 
@@ -27,6 +27,10 @@
         Socket.connect();
       }
 
+      Socket.on('connect', function () {
+        Socket.emit('room', Chat.roomName);
+      });
+
       // Add an event listener to the 'chatMessage' event
       Socket.on('chatMessage', function (message) {
         vm.messages.unshift(message);
@@ -42,14 +46,20 @@
     function sendMessage() {
       // Create a new message object
       var message = {
-        text: vm.messageText
+        content: vm.messageText,
+        created: Date.now()
       };
 
-      // Emit a 'chatMessage' message event
-      Socket.emit('chatMessage', message);
+      message = new MessagesService(message);
+      message.$update({ roomName: Chat.roomName }, function (message) {
+        // Emit a 'chatMessage' message event
+        Socket.emit('chatMessage', { message: message, room: Chat.roomName });
 
-      // Clear the message text
-      vm.messageText = '';
+        // Clear the message text
+        vm.messageText = '';
+      }, function (res) {
+        vm.messageText = res.data.message;
+      });
     }
   }
 }());
