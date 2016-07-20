@@ -2,17 +2,18 @@
   'use strict';
 
   angular
-    .module('chat')
-    .controller('ChatController', ChatController);
+    .module('experts')
+    .controller('ExpertChatController', ExpertChatController);
 
-  ChatController.$inject = ['$scope', '$state', 'Authentication', 'Socket', 'ChatResolve', 'MessagesService'];
+  ExpertChatController.$inject = ['$scope', '$state', 'Authentication', 'Socket', 'ChatResolve', 'MessagesService'];
 
-  function ChatController($scope, $state, Authentication, Socket, Chat, MessagesService) {
+  function ExpertChatController($scope, $state, Authentication, Socket, Chat, MessagesService) {
     var vm = this;
 
     vm.messages = MessagesService.get({ roomName: Chat.roomName });
     vm.messageText = '';
     vm.sendMessage = sendMessage;
+    vm.errorText = '';
 
     init();
 
@@ -58,7 +59,7 @@
         // Clear the message text
         vm.messageText = '';
       }, function (res) {
-        vm.messageText = res.data.message;
+        vm.errorText = res.data.message;
       });
     }
   }

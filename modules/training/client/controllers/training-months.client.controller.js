@@ -28,7 +28,6 @@
     });
 
     function selectCategory(category) {
-      console.log(vm.chosen.length);
       if (vm.chosen.length < vm.choices && !category.check) {
         category.check = true;
         vm.chosen.push(category);
@@ -37,6 +36,9 @@
         vm.chosen.splice(vm.chosen.indexOf(category), 1);
       } else {
         vm.selectError = true;
+      }
+      if (vm.chosen.length < vm.choices) {
+        vm.selectError = false;
       }
     }
   }

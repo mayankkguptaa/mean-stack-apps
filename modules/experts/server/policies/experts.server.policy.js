@@ -9,38 +9,35 @@ var acl = require('acl');
 acl = new acl(new acl.memoryBackend());
 
 /**
- * Invoke Admin Permissions
+ * Invoke Experts Permissions
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
     roles: ['admin'],
     allows: [{
-      resources: '/api/users',
-      permissions: '*'
-    }, {
-      resources: '/api/users/:userId',
-      permissions: '*'
-    }, {
       resources: '/api/experts',
-      permissions: '*'
-    }, {
-      resources: '/api/experts/:expertId',
       permissions: '*'
     }]
   }, {
     roles: ['user', 'guest'],
     allows: [{
-      resources: '/api/experts/:expertId',
-      permissions: ['get']
-    }, {
       resources: '/api/experts',
       permissions: ['get']
+    }]
+  }, {
+    roles: ['expert'],
+    allows: [{
+      resources: '/api/chat/users/:userId',
+      permissions: ['get']
+    }, {
+      resources: '/api/experts/me',
+      permissions: '*'
     }]
   }]);
 };
 
 /**
- * Check If Admin Policy Allows
+ * Check If Expert Policy Allows
  */
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];

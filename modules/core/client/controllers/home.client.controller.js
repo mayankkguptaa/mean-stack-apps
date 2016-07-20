@@ -5,7 +5,11 @@
     .module('core')
     .controller('HomeController', HomeController);
 
-  function HomeController() {
+  HomeController.$inject = ['ExpertsService'];
+
+  function HomeController(ExpertsService) {
     var vm = this;
+
+    vm.experts = ExpertsService.query();
   }
 }());

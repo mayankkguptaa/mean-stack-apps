@@ -44,6 +44,10 @@ var UserSchema = new Schema({
     type: String,
     trim: true
   },
+  contact: {
+    type: String,
+    trim: true
+  },
   email: {
     type: String,
     index: {
