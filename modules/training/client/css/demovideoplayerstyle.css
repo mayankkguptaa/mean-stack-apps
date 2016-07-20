@@ -1,25 +1,36 @@
+.parentofvp {
+	max-height: 380px;
+	max-width: 1000px;
+	min-height: 360px;
+	min-width: 800px;
+	overflow: auto;
+
+}
 
 #video_player {
 	display: table;
 	line-height: 10px;
-	font-size: 0;
-	background: #000;
-	margin: 0px 0px 0px 50px;
+	background: #003442;
+	margin: 0px 0px 0px 30px;
 	float: left;
-	width: 640px;
-	height: 360px;
 	padding-top: 10px;
 	padding-right: 10px;
-	border-radius: 5px;
+	border-radius: 15px;
+
 }
 #video_container {
 	position: relative;
-	border-right: 10px solid black;
-	border-left: 10px solid black;
+	border: 10px solid #003442;
+	height: 340px;
+	width: 640px;
+	overflow: auto;
 }
 #video_player div, #video_player figcaption {
 	display: table-cell;
 	vertical-align: top;
+	max-height: 360px;
+	max-width: 1000px;
+	overflow: auto;
 
 }
 #video_container video {
@@ -50,3 +61,5 @@
 		display: inline-block; width: 33.33%;
 	}
 }
+
+

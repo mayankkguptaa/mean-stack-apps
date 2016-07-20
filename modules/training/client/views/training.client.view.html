@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="modules/training/client/css/trainingstyle.css">
 <link rel="stylesheet" type="text/css" href="modules/training/client/css/demovideoplayerstyle.css">
-<script src="modules/training/client/scripts/demovideoplayer.js"></script>
+
+
 
 
 <section>
@@ -15,37 +16,36 @@
       </p>
     </div>
 
-
+    <div class="parentofvp">
     <figure id="video_player">
       <div id="video_container">
         <video controls poster="modules/training/client/img/course1month.jpg">
           <source src="modules/training/client/demovideos/abc1.webm" type="video/webm">
         </video>
       </div>
-      <figcaption>
+
+
+      <figcaption class="videolinkstyle">
         <a href="modules/training/client/demovideos/abc1.webm" class="currentvid">
-          <img src="modules/training/client/img/course1month.jpg" alt="Athabasca Glacier">
+          <div>
+            <img src="modules/training/client/img/course1month.jpg" alt="Athabasca Glacier">
+            <h4>Heading of demo video 1</h4>
+            <p>a short description of demo video 1</p>
+          </div>
         </a>
         <a href="modules/training/client/demovideos/abc2.webm" >
-          <img src="modules/training/client/img/course1month.jpg" alt="Athabasca Lake">
+          <div>
+            <img src="modules/training/client/img/course1month.jpg" alt="Athabasca Glacier">
+            <h4>Heading of demo video 1</h4>
+            <p>a short description of demo video 1</p>
+          </div>
         </a>
-        <a href="modules/training/client/demovideos/abc3.webm">
-          <img src="modules/training/client/img/course1month.jpg" alt="Mountain">
-        </a>
-        <a href="modules/training/client/demovideos/abc4.webm">
-          <img src="modules/training/client/img/course1month.jpg" alt="Mountain">
-        </a>
-
 
 
       </figcaption>
     </figure>
+    </div>
 
-
-  </div>
-
-
-  <div class="row">
     <div >
       <h1 class="courseheading">COURSES</h1>
     </div>
@@ -68,3 +68,82 @@
 
 
 </section>
+
+<script >
+  var video_player = document.getElementById("video_player");
+  var video = video_player.getElementsByTagName("video")[0];
+  var video_links = video_player.getElementsByTagName("figcaption")[0];
+  var source = video.getElementsByTagName("source");
+  var link_list = [],
+    i,
+    nextVid,
+    index,
+    vidDir = "modules/training/client/demovideos/",
+    currentVid = 0,
+    allLnks = video_links.children,
+    lnkNum = allLnks.length;
+  video.removeAttribute("controls");
+  video.removeAttribute("poster");
+
+  (function() {
+    function playVid(index) {
+      video_links.children[index].classList.add("currentvid");
+      source[0].src = vidDir + link_list[index] + ".webm";
+      // source[0].src = vidDir + link_list[index] + ".mp4";
+      currentVid = index;
+      video.load();
+      video.play();
+    }
+
+
+    for (i = 0; i < lnkNum; i++) {
+      var filename = allLnks[i].href;
+      link_list[i] = filename.match(/([^\/]+)(?=\.\w+$)/)[0];
+      (function outsideLoop(index) {
+        allLnks[i].onclick = function(i) {
+          i.preventDefault();
+          for (i = 0; i < lnkNum; i++) {
+            allLnks[i].classList.remove("currentvid");
+          }
+          playVid(index);
+        };
+      }(i));
+
+    }
+    video.addEventListener('ended', function () {
+      allLnks[currentVid].classList.remove("currentvid");
+      if ((currentVid + 1) >= lnkNum) { nextVid = 0; } else { nextVid = currentVid + 1; }
+      playVid(nextVid);
+    });
+
+    video.addEventListener('mouseenter', function() {
+      video.setAttribute("controls", "true");
+    });
+
+    video.addEventListener('mouseleave', function() {
+      video.removeAttribute("controls");
+    });
+
+    var indexOf = function(needle) {
+      if (typeof Array.prototype.indexOf === 'function') {
+        indexOf = Array.prototype.indexOf;
+      } else {
+        indexOf = function(needle) {
+          i = -1; index = -1;
+          for (i = 0; i < this.length; i++) {
+            if (this[i] === needle) {
+              index = i;
+              break;
+            }}
+          return index;
+        };}
+      return indexOf.call(this, needle);
+    };
+    var focusedLink = document.activeElement;
+    index = indexOf.call(allLnks, focusedLink);
+
+  }());
+
+</script>
+
+

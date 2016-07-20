@@ -34,6 +34,9 @@
         data: {
           pageTitle: 'Training - {{ months }} months'
         }
+      })
+      .state('training.package', {
+        url: '/:package'
       });
   }
 }());
