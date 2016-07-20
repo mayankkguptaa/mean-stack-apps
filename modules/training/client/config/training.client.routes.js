@@ -36,7 +36,7 @@
         }
       })
       .state('training.package', {
-        url: '/:package',
+        url: '/:package'
 
       });
   }
