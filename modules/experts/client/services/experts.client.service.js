@@ -30,6 +30,11 @@
     }, {
       update: {
         method: 'PUT'
+      },
+      query: {
+        method: 'GET',
+        params: { id: '' },
+        isArray: true
       }
     });
   }

@@ -10,6 +10,10 @@
   function HomeController(ExpertsService) {
     var vm = this;
 
-    vm.experts = ExpertsService.query();
+    vm.experts = [];
+
+    ExpertsService.query(function (res) {
+      vm.experts = res;
+    });
   }
 }());

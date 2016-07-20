@@ -83,7 +83,7 @@
             <h3 ng-bind="expert.user.displayName"></h3>
             <hr/>
             <p ng-bind="expert.description"></p>
-            <a class="btn btn-success" ui-sref="chat.expert({ expertId: expert._id })">Chat</a>
+            <a class="btn btn-success" ui-sref="chat.expert({ expertUserId: expert.user._id })">Chat</a>
           </div>
         </div>
       </div>
