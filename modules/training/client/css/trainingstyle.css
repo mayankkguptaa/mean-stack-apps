@@ -30,10 +30,11 @@ hr {
 	max-width: 315px;
 	max-height: 150px;
 	margin-bottom: 20px;
+	border-radius: 10px;
 }
 
 .coursesstyle h2{
-	color: #dc5559;
+	color: white;
 	margin-bottom: 20px;
 	font-size: 35px;
 
@@ -46,8 +47,25 @@ font-size: 20px;
 .wellcourse{
 	display: block;
 	margin: 10px;
-	background:-webkit-linear-gradient(bottom,#D55256,white);
+	background:#BD2E32;
+	border-radius: 30px;
 }
+
+.wellmonthwise {
+	display: block;
+	margin: 10px;
+	border-radius: 15px;
+	background:#D55256;
+
+}
+.imgaftermonths{
+	display: block;
+	margin: 30px;
+}
+
+
+
+
 
 
 

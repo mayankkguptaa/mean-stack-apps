@@ -46,11 +46,6 @@
     </figure>
     </div>
 
-
-  </div>
-
-
-  <div class="row">
     <div >
       <h1 class="courseheading">COURSES</h1>
     </div>
@@ -146,20 +141,6 @@
     };
     var focusedLink = document.activeElement;
     index = indexOf.call(allLnks, focusedLink);
-
-    document.addEventListener('keydown', function(e) {
-      if (index) {
-        var focusedElement = document.activeElement;
-        if (e.keyCode === 40 || e.keyCode === 39) { // down or right cursor
-          var nextNode = focusedElement.nextElementSibling;
-          if (nextNode) { nextNode.focus(); } else { video_links.firstElementChild.focus(); }
-        }
-        if (e.keyCode === 38 || e.keyCode === 37) { // up or left cursor
-          var previousNode = focusedElement.previousElementSibling;
-          if (previousNode) { previousNode.focus(); } else { video_links.lastElementChild.focus(); }
-        }
-      }
-    });
 
   }());
 
