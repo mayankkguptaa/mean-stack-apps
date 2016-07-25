@@ -34,12 +34,27 @@
         data: {
           pageTitle: 'Training - {{ months }} months'
         }
+      })
+      .state('training.payment', {
+        url: '/:paymentmethod',
+        templateUrl: 'modules/training/client/views/training-payment.client.view.html',
+        controller: 'TrainingPaymentController',
+        controllerAs: 'vp',
+        resolve: {
+          amount: getTotalPrice
+        },
+        data: {
+          pageTitle: 'Training - {{ months }} months'
+        }
       });
   }
 }());
 
 getMonths.$inject = ['$stateParams'];
-
+getTotalPrice.$inject = ['$stateParams'];
 function getMonths($stateParams) {
   return $stateParams.months;
+}
+function getTotalPrice($stateParams) {
+  return $stateParams.getTotalPrice();
 }
