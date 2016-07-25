@@ -5,9 +5,9 @@
     .module('training')
     .controller('TrainingPaymentController', TrainingPaymentController);
 
-  TrainingPaymentController.$inject = ['CategoriesService', 'months', '_'];
+  TrainingPaymentController.$inject = [];
 
-  function TrainingPaymentController(CategoriesService, months, _) {
+  function TrainingPaymentController() {
     var vp = this;
   }
 }());
