@@ -5,9 +5,9 @@
     .module('experts')
     .controller('ExpertProfileShowController', ExpertProfileShowController);
 
-  ExpertProfileShowController.$inject = ['Authentication', 'ExpertsService'];
+  ExpertProfileShowController.$inject = ['$scope', 'Authentication', 'ExpertsService'];
 
-  function ExpertProfileShowController(Authentication, ExpertsService) {
+  function ExpertProfileShowController($scope, Authentication, ExpertsService) {
     var vm = this;
 
     vm.user = Authentication.user;
