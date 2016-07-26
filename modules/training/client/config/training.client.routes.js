@@ -36,25 +36,28 @@
         }
       })
       .state('training.payment', {
-        url: '/:paymentmethod',
+        url: '/:userCourseId/payment',
         templateUrl: 'modules/training/client/views/training-payment.client.view.html',
         controller: 'TrainingPaymentController',
-        controllerAs: 'vp',
+        controllerAs: 'vm',
         resolve: {
-          amount: getTotalPrice
+          userCourseResolve: getUserCourse
         },
         data: {
-          pageTitle: 'Training - {{ months }} months'
+          pageTitle: 'Training - Payment'
         }
       });
   }
 }());
 
 getMonths.$inject = ['$stateParams'];
-getTotalPrice.$inject = ['$stateParams'];
+
 function getMonths($stateParams) {
   return $stateParams.months;
 }
-function getTotalPrice($stateParams) {
-  return $stateParams.getTotalPrice();
+
+getUserCourse.$inject = ['$stateParams', 'UserCoursesService'];
+
+function getUserCourse($stateParams, UserCourseService) {
+  return UserCourseService.get({ userCourseId: $stateParams.userCourseId }).$promise;
 }

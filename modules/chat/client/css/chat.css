@@ -13,3 +13,12 @@
   width: 28px;
   border-radius: 50%;
 }
+.chattagline{
+	font-size: 30px;
+	background: #D55256;
+	width: 50%;
+	height: 20%;
+	margin: 0;
+	color: white;
+	left: 50%;
+}

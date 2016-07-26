@@ -84,7 +84,7 @@
         <h2>Talk to our Experts</h2>
         <div class="row">
           <div ng-repeat="expert in vm.experts | limitTo : 4" class="col-lg-3">
-            <img ng-src="expert.user.profileImageUrl" class="img-circle expimg">
+            <img ng-src="{{expert.user.profileImageURL}}" class="img-circle expimg">
             <h3 ng-bind="expert.user.displayName"></h3>
             <hr/>
             <p ng-bind="expert.description"></p>
