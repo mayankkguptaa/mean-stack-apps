@@ -5,9 +5,9 @@
     .module('training')
     .controller('TrainingMonthsController', TrainingMonthsController);
 
-  TrainingMonthsController.$inject = ['CategoriesService', 'months', '_', '$state', 'UserCoursesService', 'Authentication'];
+  TrainingMonthsController.$inject = ['CategoriesService', 'months', '_', '$log', 'Authentication', '$uibModal'];
 
-  function TrainingMonthsController(CategoriesService, months, _, $state, UserCoursesService, Authentication) {
+  function TrainingMonthsController(CategoriesService, months, _, $log, Authentication, $uibModal) {
     var vm = this;
 
     vm.user = Authentication.user;
@@ -20,8 +20,8 @@
     vm.enableProceed = enableProceed;
     vm.cost = 0;
     vm.getCost = getCost;
-    vm.createUserCourse = createUserCourse;
-
+    vm.animationsEnabled = true;
+    vm.open = open;
 
     CategoriesService.query(function (res) {
       _.map(res, function (val) {
@@ -32,6 +32,32 @@
         this.push(val);
       }, vm.categories);
     });
+
+    function open(size) {
+
+      var modalInstance = $uibModal.open({
+        animation: vm.animationsEnabled,
+        templateUrl: 'modules/training/client/views/proceed-modal.client.view.html',
+        controller: 'ModalCtrl',
+        controllerAs: 'vm',
+        size: size,
+        resolve: {
+          chosen: function () {
+            return vm.chosen;
+          },
+          cost: function () {
+            return vm.cost;
+          },
+          months: function () {
+            return vm.months;
+          }
+        }
+      });
+
+      modalInstance.result.then(function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+    }
 
     switch (parseInt(vm.months, 10)) {
       case 1: vm.discount = 0;
@@ -52,6 +78,7 @@
 
       totalPrice = totalPrice - (totalPrice * vm.discount) / 100;
       vm.cost = totalPrice;
+      vm.open('lg');
     }
 
     function selectCategory(category) {
@@ -76,6 +103,32 @@
         return true;
       }
     }
+  }
+
+  angular
+    .module('training')
+    .controller('ModalCtrl', ModalCtrl);
+
+  ModalCtrl.$inject = ['months', 'chosen', 'cost', 'Authentication', '$uibModalInstance', 'UserCoursesService', '$state'];
+
+  function ModalCtrl(months, chosen, cost, Authentication, $uibModalInstance, UserCoursesService, $state) {
+    var vm = this;
+
+    vm.months = months;
+    vm.chosen = chosen;
+    vm.cost = cost;
+    vm.user = Authentication.user;
+    vm.createUserCourse = createUserCourse;
+    vm.resetChoices = resetChoices;
+
+    function resetChoices() {
+      vm.chosen = null;
+      vm.cancel();
+    }
+    
+    vm.cancel = function () {
+      $uibModalInstance.dismiss('cancel');
+    };
 
     function createUserCourse() {
       var userCourse = new UserCoursesService();
