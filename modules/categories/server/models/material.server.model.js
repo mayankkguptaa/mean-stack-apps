@@ -25,6 +25,7 @@ var MaterialSchema = new Schema({
   requiredDuration: Number,
   order: {
     type: Number,
+    unique: 'Material at this order already present',
     required: 'Order no. is required'
   },
   week: {

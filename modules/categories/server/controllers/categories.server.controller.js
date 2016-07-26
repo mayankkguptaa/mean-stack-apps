@@ -6,8 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   Category = mongoose.model('Category'),
-  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
-  _ = require('lodash');
+  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
  * Create a new category
