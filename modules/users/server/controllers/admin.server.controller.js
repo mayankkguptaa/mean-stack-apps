@@ -88,21 +88,25 @@ exports.update = function (req, res) {
 exports.delete = function (req, res) {
   var user = req.model;
 
-  user.remove(function (err) {
+  Expert.findOne({ user: user._id }).exec(function (err, expert) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
+    } else if (!expert) {
+      return res.status(400).send({
+        message: 'Failed to load the expert with user id ' + user._id
+      });
     }
 
-    Expert.findOne({ user: user.id }).exec(function (err, expert) {
+    expert.remove(function (err) {
       if (err) {
         return res.status(400).send({
           message: errorHandler.getErrorMessage(err)
         });
       }
 
-      expert.remove(function (err) {
+      user.remove(function (err) {
         if (err) {
           return res.status(400).send({
             message: errorHandler.getErrorMessage(err)

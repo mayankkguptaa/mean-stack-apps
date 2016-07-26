@@ -13,10 +13,6 @@
     }, {
       update: {
         method: 'PUT'
-      },
-      query: {
-        isArray: true,
-        method: 'GET'
       }
     });
   }
