@@ -1,21 +1,7 @@
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#myCarousel').carousel({
-      interval: 4000
-    })
-  });
-  $(document).ready(function() {
-    $('#fade-quote-carousel').carousel({
-      interval: 4000
-    })
-  });
-</script>
-
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:300,400,700">
-
+<script src="modules/core/client/scripts/carousel-script.homepage.js"></script>
 
 <!-- Page Content -->
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-lg-12">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -57,7 +43,7 @@
 
       <div class="container">
         <div class="row">
-          <div id="homebox1">
+          <div class="homebox1">
             <a ui-sref="training.home"><div class="col-lg-3 box1" align="center">
               <img src="modules/core/client/img/homebox1/a.jpg" class="img-circle" width="60px" height="60px">
               <p>Get Trained</p>
@@ -74,13 +60,14 @@
             </div></a>
 
           </div>
-
-
         </div>
       </div>
 
+      <div class="divide"></div>
 
-      <div id="expchat" align="center">
+
+
+      <div class="expchat" align="center">
         <h2>Talk to our Experts</h2>
         <div class="row">
           <div ng-repeat="expert in vm.experts | limitTo : 4" class="col-lg-3">
@@ -93,7 +80,8 @@
         </div>
       </div>
 
-      <section id="carouselfeedback">
+
+      <section class="carouselfeedback">
         <div class="container">
           <div class="row">
             <div class="col-md-8 col-md-offset-2">

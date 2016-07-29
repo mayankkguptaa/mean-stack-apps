@@ -67,7 +67,6 @@ a:hover .header-profile-image {
 		padding-bottom: 10px;}
 }
 
-
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -75,4 +74,31 @@ a:hover .header-profile-image {
 	background: #D55256;
 }
 
+.row.vdivide [class*='col-']:not(:last-child):after {
+	background: grey;
+	width: 1px;
+	content: "";
+	display:block;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	right: 0;
+	min-height: 40px;
+}
 
+.footerstyle{
+	font: 20px bold Tahoma;
+	color: white ;
+	border-top: 1px solid #8c8c8c;
+	margin: 5px;
+	margin-bottom: 0;
+	padding:10px ;
+	background: #D55256;
+
+}
+
+.footerstyle div{
+	padding: 4px;
+	display: inline-block;
+
+}
