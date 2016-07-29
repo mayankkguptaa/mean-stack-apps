@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="modules/training/client/css/trainingstyle.css">
 
 <section>
-  <div class="row well text-center coursesstyle wellmonthwise" align="center">
+  <div class="row well text-center coursesStyle wellmonthwise" align="center">
     <h2 class="text-uppercase">{{vm.months}} month<span ng-if="vm.months!=='1'">s</span> Course </h2>
     <p>You can select any {{vm.choices}} of the given choice of categories to learn from</p>
   </div>
@@ -20,16 +20,26 @@
 
   </div>
   <div class="row">
-    <div class="col-md-6" style="padding: 10px" ng-repeat="category in vm.categories">
-      <div class="panel-group">
-        <div class="panel panel-info" ng-click="vm.selectCategory(category)" ng-class="{ 'panel-danger': category.check }">
-          <div class="panel-heading text-capitalize" ng-bind="category.name"></div>
-          <div class="panel-body" ng-bind="category.description"></div>
-        </div>
+    <div class="col-md-4 " ng-repeat="category in vm.categories" align="center">
+
+      <div class="list-categories text-capitalize" ng-click="vm.selectCategory(category)"
+           ng-class="{ 'category-selected': category.check }"
+           ng-bind="category.name"
+           ng-mouseover="well.show = true " ng-mouseleave="well.show = false" >
       </div>
+
+      <div class="well category-description text-capitalize"
+           ng-bind="category.description"
+           ng-show="well.show" > <h3>Description:</h3>
+      </div>
+
     </div>
   </div>
 
-  <button type="button" class="btn" data-toggle="modal" data-target="#PackageShow"
-          style="background-color: #D55256;color:white;"ng-disabled="vm.enableProceed()" ng-click="vm.getCost()">Proceed</button>
+<div align="center">
+  <button type="button" class="btn proceed-button" data-toggle="modal" data-target="#PackageShow"
+          style="color:white;" ng-disabled="vm.enableProceed()" ng-click="vm.getCost()">Proceed
+  </button>
+</div>
+
 </section>

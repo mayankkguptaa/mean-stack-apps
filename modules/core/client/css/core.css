@@ -75,25 +75,23 @@ a:hover .header-profile-image {
 }
 
 .row.vdivide [class*='col-']:not(:last-child):after {
-	background: grey;
-	width: 1px;
+	background: white;
+	width: 3px;
 	content: "";
 	display:block;
 	position: absolute;
 	top:0;
 	bottom: 0;
 	right: 0;
-	min-height: 40px;
+	min-height: 30px;
 }
 
 .footerstyle{
-	font: 20px bold Tahoma;
+	font: 18px bold Tahoma;
 	color: white ;
 	border-top: 1px solid #8c8c8c;
-	margin: 5px;
-	margin-bottom: 0;
-	padding:10px ;
-	background: #D55256;
+	margin-top: 5px;
+	background: #003442;
 
 }
 

@@ -22,7 +22,7 @@
     vm.getCost = getCost;
     vm.animationsEnabled = true;
     vm.open = open;
-
+    
     CategoriesService.query(function (res) {
       _.map(res, function (val) {
         val.check = false;
@@ -95,7 +95,7 @@
         vm.selectError = false;
       }
     }
-
+    
     function enableProceed() {
       if (vm.chosen.length === vm.choices) {
         return false;
@@ -125,7 +125,7 @@
       vm.chosen = null;
       vm.cancel();
     }
-    
+
     vm.cancel = function () {
       $uibModalInstance.dismiss('cancel');
     };

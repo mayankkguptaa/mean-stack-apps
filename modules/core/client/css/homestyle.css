@@ -106,3 +106,7 @@ margin:70px 0px 70px 0px;
 	margin:20px;
 }
 
+#myCarousel{
+	max-height: 450px;
+	overflow: hidden;
+}

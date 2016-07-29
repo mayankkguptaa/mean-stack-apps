@@ -18,7 +18,7 @@ hr {
 	margin: 0px 10px 0px 10px;
 }
 
-.courseheading{
+.courseHeading{
 	color: #D55256;
 	font-size: 40px;
 	text-indent: 10px;
@@ -26,22 +26,23 @@ hr {
 
 }
 
-.coursesstyle img{
+.coursesStyle img{
 	max-width: 315px;
 	max-height: 150px;
 	margin-bottom: 20px;
 	border-radius: 10px;
 }
 
-.coursesstyle h2{
+.coursesStyle h2{
 	color: white;
 	margin-bottom: 20px;
 	font-size: 35px;
 
 }
-.coursesstyle p {
-font-size: 20px;
+.coursesStyle p {
+	font-size: 17px;
 	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .wellcourse{
@@ -62,6 +63,60 @@ font-size: 20px;
 	display: block;
 	margin: 30px;
 }
+
+.list-categories{
+	padding: 10px;
+	border: 1px solid #D55256;
+	margin: 10px;
+	border-radius: 5px;
+	display: block;
+	-webkit-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	-moz-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	margin-bottom: 30px;
+	background: white;
+	color: #D55256;
+	font-size: 20px;
+
+}
+
+.category-selected{
+	padding: 10px;
+	border: 1px solid #D55256;
+	margin: 10px;
+	border-radius: 5px;
+	display: block;
+	-webkit-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	-moz-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	margin-bottom: 30px;
+	background: #D55256;
+	color: white;
+	font-size: 20px;
+}
+
+.category-description {
+	position: absolute;
+	z-index: 100;
+	top: 70px;
+	left: 28px;
+	display: block;
+	color: white;
+	background: #003442;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.proceed-button{
+	text-decoration: none;
+	background-color: #D55256;
+	color:white;
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+
+
 
 
 

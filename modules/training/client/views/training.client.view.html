@@ -47,16 +47,16 @@
     </div>
 
     <div >
-      <h1 class="courseheading">COURSES</h1>
+      <h1 class="courseHeading">COURSES</h1>
     </div>
     <hr/>
-    <div class="col-md-4 coursesstyle" ng-repeat="course in vm.courses" style="padding:10px">
+    <div class="col-md-4 coursesStyle" ng-repeat="course in vm.courses" style="padding:10px">
       <div class="well wellcourse" ui-sref="training.months({ months: course.months})">
 
         <h2 align="center" >{{course.months}} Month<span ng-if="course.months!==1">s</span> Course</h2>
         <img src="modules/training/client/img/course{{course.months}}month.jpg" align="center">
 
-        <p>
+        <p class="cousreDescription">
           This course is for {{course.months}} month<span ng-if="course.months!==1">s</span>.
           Out of the given 6 categories, you can learn any {{course.choices}}.This course is for {{course.months}} month<span ng-if="course.months!==1">s</span>.
           Out of the given 6 categories, you can learn any {{course.choices}}.
