@@ -83,27 +83,25 @@ a:hover .header-profile-image {
 
 /*style for footer*/
 
-/*
 .row.vdivide [class*='col-']:not(:last-child):after {
 	background: white;
-	width: 3px;
+	width: 1px;
 	content: "";
 	display:block;
 	position: absolute;
 	top:0;
 	bottom: 0;
 	right: 0;
-	min-height: 30px;
+	min-height: 10px;
 }
-*/
 
 
 .panel-footer{
 	clear: both;
 	position: relative;
 	z-index: 10;
-	height: 3em;
-	margin-top: -3em;
+	height: 2em;
+	margin-top: -2em;
 
 	font: 16px bold Tahoma;
 	color: white ;
