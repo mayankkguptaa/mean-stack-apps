@@ -41,7 +41,7 @@
         controller: 'TrainingPaymentController',
         controllerAs: 'vm',
         resolve: {
-          userCourseResolve: getUserCourse
+          userCourseResolve: getUserCourse 
         },
         data: {
           pageTitle: 'Training - Payment'

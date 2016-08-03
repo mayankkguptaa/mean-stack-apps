@@ -10,6 +10,7 @@
   function TrainingPaymentController(userCourse) {
     var vm = this;
     
+    vm.cost = userCourse.cost;
     vm.userCourse = userCourse;
   }
 }());

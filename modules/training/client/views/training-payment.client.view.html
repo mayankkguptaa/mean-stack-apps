@@ -1,3 +1,41 @@
+<link rel="stylesheet" type="text/css" href="modules/training/client/css/trainingstyle.css">
+
 <section>
-  <h1 ng-bind="vm.userCourse.user.displayName"></h1>
+  <h3>Hello, <span class="user-name">{{vm.userCourse.user.displayName}}</span> <br/><br/> Choose a payment method for the amount Rs.{{vm.cost}}</h3>
+
+<div class="payment-methods">
+  <div class="payment-methods-nav" align="center">
+    <ul class="nav nav-pills">
+      <li >
+        <a href ng-click = "tab = 1">Debit Card/ Credit Card</a> </li>
+      <li>
+        <a href ng-click = "tab = 2">Net Banking</a> </li>
+      <li>
+        <a href ng-click = "tab = 3">Cash/ Cheque/ DD</a> </li>
+    </ul>
+  </div>
+
+<div ng-init="tab = 1">
+
+  <div class="panel" ng-show="tab === 1">
+    <blockquote>
+      Debit Card/ Credit Card
+    </blockquote>
+
+  </div>
+
+  <div class="panel" ng-show="tab === 2">
+    <blockquote>
+      Net Banking
+    </blockquote>
+
+  </div>
+
+  <div class="panel" ng-show="tab === 3">
+    <blockquote>
+      Cash/ Cheque/ DD
+    </blockquote>
+  </div>
+</div>
+</div>
 </section>

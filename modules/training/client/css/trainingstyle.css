@@ -115,7 +115,29 @@ hr {
 	margin-bottom: 50px;
 }
 
+.user-name{
+	color: #D55256;
+}
+.payment-methods-nav li{
+	margin-right: 20px;
+}
+.payment-methods-nav li a:hover, .payment-methods-nav li a:active{
+	color: white;
+	background: #D55256;
+}
 
+.payment-methods-nav{
+	margin-bottom: 20px;
+	margin-left: 10%;
+}
+
+.payment-methods{
+	width: 50%;
+	border: 1px solid #D55256;
+	padding: 20px;
+	margin-left: 25%;
+	margin-top: 3%;
+}
 
 /* when showing the picture */
 .ng-hide-remove{
