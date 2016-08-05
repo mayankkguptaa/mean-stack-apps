@@ -1,6 +1,12 @@
 .content {
-  margin-top: 60px;
+  	margin-top: 60px;
+	padding-bottom: 3em;
 }
+
+html, body, .container-fluid { height: 100%; }
+body > .container-fluid { height: auto; min-height: 100%; }
+
+
 .undecorated-link:hover {
   text-decoration: none;
 }
@@ -67,7 +73,6 @@ a:hover .header-profile-image {
 		padding-bottom: 10px;}
 }
 
-
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -76,3 +81,30 @@ a:hover .header-profile-image {
 }
 
 
+/*style for footer*/
+
+.row.vdivide [class*='col-']:not(:last-child):after {
+	background: white;
+	width: 1px;
+	content: "";
+	display:block;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	right: 0;
+	min-height: 10px;
+}
+
+
+.panel-footer{
+	clear: both;
+	position: relative;
+	z-index: 10;
+	height: 2em;
+	margin-top: -2em;
+
+	font: 16px bold Tahoma;
+	color: white ;
+	background: #003442;
+
+}

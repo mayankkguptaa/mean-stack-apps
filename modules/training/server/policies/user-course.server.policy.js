@@ -28,7 +28,7 @@ exports.invokeRolesPolicies = function () {
       permissions: '*'
     }, {
       resources: '/api/courses/:userCourseId',
-      permissions: ''
+      permissions: '*'
     }]
   }]);
 };
@@ -40,7 +40,7 @@ exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];
 
   // If a course is being processed and the current user created it then allow any manipulation
-  if (req.userCourse && req.user && req.userCourse.user.id === req.user.id) {
+  if (req.userCourse && req.user && req.userCourse.user._id === req.user._id) {
     return next();
   }
 

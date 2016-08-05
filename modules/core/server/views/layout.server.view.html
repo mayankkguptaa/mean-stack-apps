@@ -37,11 +37,14 @@
 
 <body class="ng-cloak">
   <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-default" ></header>
-  <section class="content">
-    <section class="container">
+
+  <section class="container-fluid">
+    <section class="content">
       {% block content %}{% endblock %}
     </section>
   </section>
+
+  <footer ng-include="'/modules/core/client/views/footer.client.view.html'" class="panel-footer"></footer>
 
   <!--Embedding The User Object-->
   <script type="text/javascript">
@@ -50,7 +53,7 @@
 
   <!--Load The Socket.io File-->
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    
+
   <!--Application JavaScript Files-->
   {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
 

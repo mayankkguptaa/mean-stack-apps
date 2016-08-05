@@ -5,9 +5,11 @@
     .module('training')
     .controller('TrainingPaymentController', TrainingPaymentController);
 
-  TrainingPaymentController.$inject = [];
+  TrainingPaymentController.$inject = ['userCourseResolve'];
 
-  function TrainingPaymentController() {
-    var vp = this;
+  function TrainingPaymentController(userCourse) {
+    var vm = this;
+    
+    vm.userCourse = userCourse;
   }
 }());

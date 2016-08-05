@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="modules/training/client/css/trainingstyle.css">
 
 <section>
-  <div class="row well text-center coursesstyle wellmonthwise" align="center">
+  <div class="row well text-center coursesStyle wellmonthwise" align="center">
     <h2 class="text-uppercase">{{vm.months}} month<span ng-if="vm.months!=='1'">s</span> Course </h2>
     <p>You can select any {{vm.choices}} of the given choice of categories to learn from</p>
   </div>
@@ -20,63 +20,26 @@
 
   </div>
   <div class="row">
-    <div class="col-md-6" style="padding: 10px" ng-repeat="category in vm.categories">
-      <div class="panel-group">
-        <div class="panel panel-info" ng-click="vm.selectCategory(category)" ng-class="{ 'panel-danger': category.check }">
-          <div class="panel-heading text-capitalize" ng-bind="category.name"></div>
-          <div class="panel-body" ng-bind="category.description"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div class="col-md-4 " ng-repeat="category in vm.categories" align="center">
 
-  <button type="button" class="btn" data-toggle="modal" data-target="#PackageShow"
-          style="background-color: #D55256;color:white;"ng-disabled="vm.enableProceed()">Proceed</button>
-</section>
-
-<div class="modal fade" id="PackageShow">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h2>Your Package - {{vm.months}} month<span ng-if="vm.months!=='1'">s</span> Course </h2>
+      <div class="list-categories text-capitalize" ng-click="vm.selectCategory(category)"
+           ng-class="{ 'category-selected': category.check }"
+           ng-bind="category.name"
+           ng-mouseover="well.show = true " ng-mouseleave="well.show = false" >
       </div>
 
-      <div class="modal-body">
-        <table class = "table table-hover">
-          <thead>
-          <tr>
-            <th>Chosen categories</th>
-            <th>Description</th>
-            <th>Price(in Rs.)</th>
-          </tr>
-          </thead>
-
-          <tbody>
-          <tr ng-repeat="category in vm.chosen">
-            <td ng-bind="category.name"></td>
-            <td ng-bind="category.description"></td>
-            <td ng-bind="category.price"></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <div align="right">
-          <p>*For {{vm.months}} month<span ng-if="vm.months!=='1'">s</span> course you get {{vm.discount}}% discount</p>
-          <h2 >Your Total : Rs {{vm.packageTotal()}} </h2>
-
-        </div>
-
-      </div>
-
-      <div class="modal-footer">
-        <button class="btn btn-primary" style="float: center;">Reset Choices</button>
-        <button class="btn btn-primary" style="float: center;" ui-sref="training.payment">Proceed to Payment</button>
+      <div class="well category-description text-capitalize"
+           ng-bind="category.description"
+           ng-show="well.show" > <h3>Description:</h3>
       </div>
 
     </div>
   </div>
+
+<div align="center">
+  <button type="button" class="btn proceed-button" data-toggle="modal" data-target="#PackageShow"
+          style="color:white;" ng-disabled="vm.enableProceed()" ng-click="vm.getCost()">Proceed
+  </button>
 </div>
 
-
+</section>

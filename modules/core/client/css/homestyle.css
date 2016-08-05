@@ -4,53 +4,60 @@
 	border-radius: 10px;
 }
 
-
-
-#homebox1 p{
+.homebox1 p{
 	font: 20px bold Tahoma;
 	color: #D55256;
 
 }
 
-#expchat{
-	margin:20px 10px 50px 10px;
+.divide {
 	border-top:13px solid #D55256;
+	margin-bottom: 50px ;
+}
+
+.expchat{
+	margin:20px 0 50px 0;
+	padding:40px 10px 40px 10px;
+	background: rgba(178, 178, 178, 0.29);
+	border: 1px solid #c6c6c6;
+
 
 }
 
-#expchat h2{
+.expchat h2{
 	width: 30%;
-	margin: 50px 20px 50px 20px;
-	font: 40px bold Arial grey;
-	border-bottom: 5px solid grey;
+	margin: 0 20px 50px 20px;
+	font: 40px bold Tahoma ;
+	border-bottom: 5px solid #9e9e9e;
+	color: #D55256;
 }
 
-#expchat p{
+.expchat p{
 	font: 20px bold Arial;
 	margin-bottom: 20px;
 }
-#expchat h3{
-	font: 30px bold Arial;
+.expchat h3{
+	font: 30px bold Tahoma;
 	margin:10px;
 	margin-top: 20px;
 }
 
-#expchat hr{
+.expchat hr{
 	height: 12px;
     border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 12px 12px -12px #D55256;
 }
 .expimg{
 	height: 160px;
 	width: 160px;
-	border:2px solid #D55256;
+	border:2px solid grey;
 }
 
 section {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-#carouselfeedback{
+.carouselfeedback{
 background-color: #003442;
 color: white;
 margin:70px 0px 70px 0px;
@@ -99,3 +106,7 @@ margin:70px 0px 70px 0px;
 	margin:20px;
 }
 
+#myCarousel{
+	max-height: 450px;
+	overflow: hidden;
+}

@@ -15,18 +15,28 @@ var path = require('path'),
  * @param res
  */
 exports.create = function (req, res) {
-  var userCourse = new UserCourse(req.body);
+  var userCourse = new UserCourse();
   userCourse.user = req.user._id;
-
-  userCourse.save(function (err) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      res.json(userCourse);
-    }
-  });
+  userCourse.months = req.body.months;
+  userCourse.categories = req.body.categories;
+  userCourse.cost = req.body.cost;
+  userCourse.updated = Date.now();
+  
+  if (userCourse.categories) {
+    userCourse.save(function (err) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        res.json(userCourse);
+      }
+    });
+  } else {
+    return res.status(400).send({
+      message: 'No categories selected'
+    });
+  }
 };
 
 /**
@@ -48,13 +58,43 @@ exports.read = function (req, res) {
  * @param res
  */
 exports.list = function (req, res) {
-  UserCourse.find({ user: req.user.id }).sort('-created').populate('user', 'categories').exec(function (err, userCourses) {
+  UserCourse.find({ user: req.user._id }).sort('-created').populate('user categories').exec(function (err, userCourses) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
       res.json(userCourses);
+    }
+  });
+};
+
+exports.update = function (req, res) {
+  var userCourse = req.userCourse;
+  
+  userCourse.paymentConfirm = req.body.paymentConfirm;
+  
+  userCourse.save(function (err) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(userCourse);
+    }
+  });
+};
+
+exports.delete = function (req, res) {
+  var userCourse = req.userCourse;
+
+  userCourse.remove(function (err) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(userCourse);
     }
   });
 };
@@ -75,7 +115,7 @@ exports.userCourseByID = function (req, res, next, id) {
     });
   }
 
-  UserCourse.findById(id).populate('user', 'categories').exec(function (err, userCourse) {
+  UserCourse.findById(id).populate('user categories').exec(function (err, userCourse) {
     if (err) {
       return next(err);
     } else if (!userCourse) {

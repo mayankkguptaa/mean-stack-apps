@@ -13,7 +13,9 @@ module.exports = function (app) {
     .post(userCourse.create);
 
   app.route('/api/courses/:userCourseId').all(userCoursePolicy.isAllowed)
-    .get(userCourse.read);
+    .get(userCourse.read)
+    .put(userCourse.update)
+    .delete(userCourse.delete);
 
   app.param('userCourseId', userCourse.userCourseByID);
 };
