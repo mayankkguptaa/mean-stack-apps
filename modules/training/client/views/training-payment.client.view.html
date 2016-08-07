@@ -6,11 +6,11 @@
 <div class="payment-methods">
   <div class="payment-methods-nav" align="center">
     <ul class="nav nav-pills">
-      <li >
+      <li ng-class="{ focus:tab === 1}">
         <a href ng-click = "tab = 1">Debit Card/ Credit Card</a> </li>
-      <li>
+      <li ng-class="{ focus:tab === 2}">
         <a href ng-click = "tab = 2">Net Banking</a> </li>
-      <li>
+      <li ng-class="{ focus:tab === 3}">
         <a href ng-click = "tab = 3">Cash/ Cheque/ DD</a> </li>
     </ul>
   </div>
@@ -21,7 +21,33 @@
     <blockquote>
       Debit Card/ Credit Card
     </blockquote>
+    <form class="form-group">
+    <table class="table-condensed form-group-sm">
+      <tr>
+        <td>Full Name : </td>
+        <td> <input class="form-control" type="text" name="account-name" id="account-name" placeholder="Enter your full name" /> </td>
+      </tr>
+      <tr>
+        <td>Bank's Name : </td>
+        <td> <input class="form-control" type="text" name="bank-name" id="bank-name" placeholder="Enter your bank's name"/></td>
+      </tr>
+      <tr>
+        <td>Card Details : </td>
+        <td> <input class="form-control" type="number" pattern="[0-9]{16}" name="card-number" id="card-number" placeholder="Enter your card number"/> </td>
+      </tr>
+      <tr>
+        <td>Card's Expiry Date: </td>
+        <td>
+          <input  class="date-column" type="number" pattern="[1-12]{2}" name="card-expiry-month" id="card-expiry-month" placeholder="MM" /> /
+          <input  class="date-column" type="number" pattern="[16-99]{2}" name="card-expiry-year" id="card-expiry-year" placeholder="YY" />
+        </td>
+      </tr>
+    </table>
 
+      <div align="center" class="set-margin">
+      <button ng-click="vm.paymentDone()" class="btn btn-primary" >Pay Now</button>
+      </div>
+    </form>
   </div>
 
   <div class="panel" ng-show="tab === 2">

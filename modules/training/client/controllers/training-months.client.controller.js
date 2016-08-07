@@ -18,11 +18,13 @@
     vm.chosen = [];
     vm.selectError = false;
     vm.enableProceed = enableProceed;
+    vm.proceedClicked = proceedClicked;
     vm.cost = 0;
     vm.getCost = getCost;
     vm.animationsEnabled = true;
     vm.open = open;
     vm.discount = 0;
+    vm.authenticationMessage = false;
 
     CategoriesService.query(function (res) {
       _.map(res, function (val) {
@@ -71,6 +73,13 @@
       modalInstance.result.then(function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
+    }
+    function proceedClicked() {
+      if (vm.user) {
+        vm.getCost();
+      } else {
+        vm.authenticationMessage = true;
+      }
     }
 
     function getCost() {
@@ -130,7 +139,7 @@
       vm.chosen = [];
       console.log(vm.chosen);
       vm.cancel();
-      
+
     }
 
     vm.cancel = function () {

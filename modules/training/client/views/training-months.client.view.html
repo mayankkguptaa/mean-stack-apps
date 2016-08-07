@@ -37,9 +37,11 @@
   </div>
 
 <div align="center">
+  <span class="authentication-message" ng-show="vm.authenticationMessage">* You need to sign-in to proceed<br/></span>
   <button type="button" class="btn proceed-button" data-toggle="modal" data-target="#PackageShow"
-          style="color:white;" ng-disabled="vm.enableProceed()" ng-click="vm.getCost()">Proceed
+          style="color:white;" ng-disabled="vm.enableProceed()" ng-click="vm.proceedClicked()">Proceed
   </button>
+
 </div>
 
 </section>

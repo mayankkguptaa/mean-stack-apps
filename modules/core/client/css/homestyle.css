@@ -63,6 +63,14 @@ color: white;
 margin:70px 0px 70px 0px;
 }
 
+.whyvc{
+	background-color: #D55256;
+	color: white;
+	margin:70px 0px 70px 0px;
+	padding: 10px 10px 10px 30px;
+
+}
+
 .quote {
     color: rgba(0,0,0,.1);
     text-align: center;
@@ -88,7 +96,7 @@ margin:70px 0px 70px 0px;
   bottom: 10px;
 }
 #fade-quote-carousel.carousel .carousel-indicators > li {
-  background-color: #e84a64;
+  background-color: #D55256;
   border: none;
 }
 #fade-quote-carousel blockquote {
@@ -107,6 +115,6 @@ margin:70px 0px 70px 0px;
 }
 
 #myCarousel{
-	max-height: 450px;
+	max-height: 440px;
 	overflow: hidden;
 }
