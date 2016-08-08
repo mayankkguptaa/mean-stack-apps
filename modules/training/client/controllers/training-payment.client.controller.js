@@ -9,14 +9,13 @@
 
   function TrainingPaymentController(userCourse, $state) {
     var vm = this;
-    
+
     vm.cost = userCourse.cost;
     vm.userCourse = userCourse;
     vm.paymentDone = paymentDone;
-    
+
     function paymentDone() {
-      console.log(vm.cost);
-      $state.go('training.dashboard');
+      $state.go('dashboard.training');
     }
   }
 }());

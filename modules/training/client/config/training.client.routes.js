@@ -41,22 +41,10 @@
         controller: 'TrainingPaymentController',
         controllerAs: 'vm',
         resolve: {
-          userCourseResolve: getUserCourse 
-        },
-        data: {
-          pageTitle: 'Training - Payment'
-        }
-      })
-      .state('training.dashboard', {
-        url: '/:userCourseId/payment',
-        templateUrl: 'modules/training/client/views/training-dashboard.client.view.html',
-        controller: 'TrainingDashboardController',
-        controllerAs: 'vm',
-        resolve: {
           userCourseResolve: getUserCourse
         },
         data: {
-          pageTitle: 'Training - Dashboard'
+          pageTitle: 'Training - Payment'
         }
       });
   }

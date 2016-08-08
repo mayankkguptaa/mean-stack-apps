@@ -139,6 +139,7 @@
       vm.chosen = [];
       console.log(vm.chosen);
       vm.cancel();
+      
 
     }
 
