@@ -93,19 +93,25 @@ exports.delete = function (req, res) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
-    } else if (!expert) {
-      return res.status(400).send({
-        message: 'Failed to load the expert with user id ' + user._id
-      });
-    }
+    } else if (expert) {
+      expert.remove(function (err) {
+        if (err) {
+          return res.status(400).send({
+            message: errorHandler.getErrorMessage(err)
+          });
+        }
 
-    expert.remove(function (err) {
-      if (err) {
-        return res.status(400).send({
-          message: errorHandler.getErrorMessage(err)
+        user.remove(function (err) {
+          if (err) {
+            return res.status(400).send({
+              message: errorHandler.getErrorMessage(err)
+            });
+          }
+
+          res.json(user);
         });
-      }
-
+      });
+    } else {
       user.remove(function (err) {
         if (err) {
           return res.status(400).send({
@@ -115,7 +121,7 @@ exports.delete = function (req, res) {
 
         res.json(user);
       });
-    });
+    }
   });
 };
 

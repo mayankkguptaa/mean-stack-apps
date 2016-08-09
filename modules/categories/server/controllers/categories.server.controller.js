@@ -6,6 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   Category = mongoose.model('Category'),
+  Material = mongoose.model('Material'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
@@ -37,6 +38,22 @@ exports.read = function (req, res) {
   var category = req.category ? req.category.toJSON() : {};
 
   res.json(category);
+};
+
+exports.materialList = function (req, res) {
+  var category = req.category;
+
+  Material.find({ category: category._id }).sort({ week: 1, order: 1 }).exec(function (err, materials) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else if (!materials) {
+      materials = [];
+    }
+
+    res.json(materials);
+  });
 };
 
 /**

@@ -1,19 +1,19 @@
-var video_player = document.getElementById('video_player');
-var video = video_player.getElementsByTagName('video')[0];
-var video_links = video_player.getElementsByTagName('figcaption')[0];
-var source = video.getElementsByTagName('source');
-var link_list = [],
-  i,
-  nextVid,
-  index,
-  vidDir = 'modules/training/client/demovideos/',
-  currentVid = 0,
-  allLnks = video_links.children,
-  lnkNum = allLnks.length;
-video.removeAttribute('controls');
-video.removeAttribute('poster');
-
 (function() {
+  var video_player = document.getElementById('video_player');
+  var video = video_player.getElementsByTagName('video')[0];
+  var video_links = video_player.getElementsByTagName('figcaption')[0];
+  var source = video.getElementsByTagName('source');
+  var link_list = [],
+    i,
+    nextVid,
+    index,
+    vidDir = 'modules/training/client/demovideos/',
+    currentVid = 0,
+    allLnks = video_links.children,
+    lnkNum = allLnks.length;
+  video.removeAttribute('controls');
+  video.removeAttribute('poster');
+
   function playVid(index) {
     video_links.children[index].classList.add('currentvid');
     source[0].src = vidDir + link_list[index] + '.webm';
@@ -85,5 +85,4 @@ video.removeAttribute('poster');
       }
     }
   });
-
 }());

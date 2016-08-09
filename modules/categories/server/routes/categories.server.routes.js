@@ -12,6 +12,9 @@ module.exports = function (app) {
     .get(categories.list)
     .post(categories.create);
 
+  app.route('/api/categories/:categoryId/materials').all(categoriesPolicy.isAllowed)
+    .get(categories.materialList);
+
   // Single article routes
   app.route('/api/categories/:categoryId').all(categoriesPolicy.isAllowed)
     .get(categories.read)

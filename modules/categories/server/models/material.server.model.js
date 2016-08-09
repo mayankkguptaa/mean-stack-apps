@@ -19,8 +19,7 @@ var MaterialSchema = new Schema({
     required: 'Description is required'
   },
   path: {
-    type: String,
-    required: 'Path to material required'
+    type: String
   },
   requiredDuration: Number,
   order: {

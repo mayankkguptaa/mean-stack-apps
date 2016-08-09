@@ -15,10 +15,14 @@ var path = require('path'),
  * @param res
  */
 exports.create = function (req, res) {
-  var category = req.category,
-    material = new Material(res.body);
+  var material = new Material();
 
-  material.category = category._id;
+  material.title = req.body.title;
+  material.description = req.body.description;
+  material.category = req.body.category;
+  material.week = req.body.week;
+  material.order = req.body.order;
+
   material.save(function (err) {
     if (err) {
       return res.status(400).send({
@@ -27,7 +31,7 @@ exports.create = function (req, res) {
     }
 
     res.json(material);
-  })
+  });
 };
 
 /**
@@ -36,9 +40,8 @@ exports.create = function (req, res) {
  * @param res
  */
 exports.list = function (req, res) {
-  var category = req.category;
 
-  Material.find({ category: category._id }).sort({ week: 1, order: 1 }).populate('category').exec(function (err, materials) {
+  Material.find().populate('category').exec(function (err, materials) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -84,9 +87,9 @@ exports.delete = function (req, res) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
-
-      res.json(material);
     }
+
+    res.json(material);
   });
 };
 
@@ -118,5 +121,5 @@ exports.materialByID = function (req, res, next, id) {
     } else {
       req.material = material;
     }
-  })
+  });
 };

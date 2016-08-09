@@ -18,7 +18,16 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/categories',
       permissions: '*'
     }, {
+      resources: '/api/materials',
+      permissions: '*'
+    }, {
       resources: '/api/categories/:categoryId',
+      permissions: '*'
+    }, {
+      resources: '/api/categories/:categoryId/materials',
+      permissions: '*'
+    }, {
+      resources: '/api/materials/:materialId',
       permissions: '*'
     }]
   }, {
@@ -28,6 +37,12 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get']
     }, {
       resources: '/api/categories/:categoryId',
+      permissions: ['get']
+    }, {
+      resources: '/api/categories/:categoryId/materials',
+      permissions: ['get']
+    }, {
+      resources: '/api/materials/:materialId',
       permissions: ['get']
     }]
   }, {

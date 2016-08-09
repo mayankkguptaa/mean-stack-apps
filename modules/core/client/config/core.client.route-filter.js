@@ -5,9 +5,9 @@
     .module('core')
     .run(routeFilter);
 
-  routeFilter.$inject = ['$rootScope', '$state', 'Authentication'];
+  routeFilter.$inject = ['$rootScope', '$state', 'Authentication', '$uibModalStack'];
 
-  function routeFilter($rootScope, $state, Authentication) {
+  function routeFilter($rootScope, $state, Authentication, $uibModalStack) {
     $rootScope.$on('$stateChangeStart', stateChangeStart);
     $rootScope.$on('$stateChangeSuccess', stateChangeSuccess);
 
@@ -38,6 +38,7 @@
     }
 
     function stateChangeSuccess(event, toState, toParams, fromState, fromParams) {
+      $uibModalStack.dismissAll();
       // Record previous state
       storePreviousState(fromState, fromParams);
     }

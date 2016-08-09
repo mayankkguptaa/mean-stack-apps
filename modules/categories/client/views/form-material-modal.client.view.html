@@ -1,0 +1,59 @@
+<div style="margin: 10px">
+<div class="modal-header">
+  <h1>{{ vm.material._id ? 'Edit Material' : 'New Material' }}</h1>
+</div>
+<div class="modal-body">
+  <form name="vm.form.materialForm" class="form-horizontal" ng-submit="vm.save(vm.form.materialForm.$valid)" novalidate>
+    <fieldset>
+      <div class="form-group" show-errors>
+        <label class="control-label" for="title">Material Title</label>
+        <input name="title" type="text" ng-model="vm.material.title" id="title" class="form-control" placeholder="Material Title" required>
+        <div ng-messages="vm.form.materialForm.title.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Material title is required.</p>
+        </div>
+      </div>
+      <div class="form-group" show-errors>
+        <label class="control-label" for="description">Description</label>
+        <textarea name="description" ng-model="vm.material.description" id="description" class="form-control" cols="30" rows="10" placeholder="Description" required></textarea>
+        <div ng-messages="vm.form.materialForm.description.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Material Description is required.</p>
+        </div>
+      </div>
+      <div class="form-group" show-errors>
+        <label class="control-label" for="category">Category</label>
+        <select class="text-capitalize form-control" name="category" data-ng-model="vm.material.category" id="category" required>
+          <option ng-repeat="category in vm.categories" value="{{category._id}}">{{category.name}}</option>
+        </select>
+        <div ng-messages="vm.form.materialForm.category.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Category is required.</p>
+        </div>
+      </div>
+      <div class="form-group" show-errors>
+        <label class="control-label" for="week">Week</label>
+        <select name="week" ng-model="vm.material.week" id="week" class="form-control">
+          <option ng-repeat="week in [1, 2, 3, 4]" value="{{week}}">Week {{week}}</option>
+        </select>
+        <div ng-messages="vm.form.materialForm.week.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Week is required.</p>
+        </div>
+      </div>
+      <div class="form-group" show-errors>
+        <label class="control-label" for="order">Order</label>
+        <input name="order" type="text" ng-model="vm.material.order" id="order" class="form-control" placeholder="Order" required>
+        <div ng-messages="vm.form.materialForm.order.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Order is required.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-default">{{vm.material._id ? 'Update' : 'Create'}}</button>
+      </div>
+      <div ng-show="vm.error" class="text-danger">
+        <strong ng-bind="vm.error"></strong>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>
+</div>
