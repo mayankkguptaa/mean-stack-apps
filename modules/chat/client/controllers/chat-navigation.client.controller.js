@@ -5,15 +5,29 @@
     .module('chat')
     .controller('ChatNavigationController', ChatNavigationController);
 
-  ChatNavigationController.$inject = ['ExpertsService'];
+  ChatNavigationController.$inject = ['ExpertsService', '$state', 'Socket', 'Authentication'];
 
-  function ChatNavigationController(ExpertsService) {
+  function ChatNavigationController(ExpertsService, $state, Socket, Authentication) {
     var vm = this;
 
-    vm.experts = [];
+    vm.experts = ExpertsService.query();
+    vm.changeExpert = changeExpert;
+    vm.user = Authentication.user;
 
-    ExpertsService.query(function (res) {
-      vm.experts = res;
-    });
+    init();
+
+    function init() {
+      if (!Socket.socket) {
+        Socket.connect();
+      }
+
+      Socket.on('connect', function () {
+        Socket.emit('addUser', { username: vm.user.username });
+      });
+    }
+
+    function changeExpert(expert) {
+      Socket.emit('switchRoom', expert.user.username + vm.user.username);
+    }
   }
 }());

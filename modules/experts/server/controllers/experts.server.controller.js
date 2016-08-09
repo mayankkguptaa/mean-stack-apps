@@ -41,7 +41,7 @@ exports.update = function (req, res) {
  * List of Experts
  */
 exports.list = function (req, res) {
-  Expert.find().populate('user', 'displayName').exec(function (err, experts) {
+  Expert.find().populate('user').exec(function (err, experts) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
