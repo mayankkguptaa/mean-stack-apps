@@ -1,3 +1,16 @@
+.contacts-home{
+	width: 100%;
+	background: #D55256;
+	color: white;
+	height: 2em;
+	font-family: 'Source Sans Pro', Sans-serif;
+	font-size: 18px;
+	padding-top: 5px;
+	overflow: hidden;
+}
+.default-font{
+	font-family: 'Source Sans Pro', Sans-serif;
+}
 .box1{
 	border:1px solid #D55256;
 	margin: 20px 45px 20px 45px;
