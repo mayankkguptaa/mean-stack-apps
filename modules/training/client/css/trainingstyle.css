@@ -83,6 +83,9 @@ hr {
 	font-size: 20px;
 
 }
+.table-responsive td{
+	padding-left: 10px;
+}
 
 .category-selected{
 	padding: 10px;

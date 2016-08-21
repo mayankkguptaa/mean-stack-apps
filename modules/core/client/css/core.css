@@ -1,10 +1,36 @@
-.content {
-  	margin-top: 75px;
-	padding-bottom: 3em;
+.row{
+	padding-left: 0 ;
+	padding-right: 0;
+	margin: 0 auto;
 }
+.content {
+  	margin: 80px 0 20px 0;
+	padding-bottom: 3em;
+	width: 100%;
+	padding-left: 0 ;
+	padding-right: 0;
+}
+.full-screen{
+	padding-left: 0;
+	padding-right: 0;
+}
+html, body, .container-fluid {
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 0 ;
+	padding-right: 0;
 
-html, body, .container-fluid { height: 100%; }
-body > .container-fluid { height: auto; min-height: 100%; }
+
+}
+body > .container-fluid {
+	height: auto;
+	min-height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 0 ;
+	padding-right: 0;
+}
 
 
 .undecorated-link:hover {
@@ -50,19 +76,27 @@ a:hover .header-profile-image {
 #logo-img{
 	height: 45px;
 	width: 120px;
-	margin-top: 0px;
+	margin-top: 0;
+}
+
+.social-icon{
+	font-size: 14px;
+	background: #D55256;
+	border: transparent;
+
 }
 
 .navbar-fixed-top {
 	min-height: 65px;
+
 }
 
 .navbar-nav > li > a {
-	margin: 10px 5px 10px 5px;
+	margin: 15px 3px 15px 3px;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	line-height: 40px;
-	border-radius: 10px;
+	border-radius: 8px;
 	font-size: 15px
 }
 
@@ -83,28 +117,21 @@ a:hover .header-profile-image {
 
 /*style for footer*/
 
-.row.vdivide [class*='col-']:not(:last-child):after {
-	background: white;
-	width: 1px;
-	content: "";
-	display:block;
-	position: absolute;
-	top:0;
-	bottom: 0;
-	right: 0;
-	min-height: 10px;
-}
-
-
 .panel-footer{
 	clear: both;
 	position: relative;
 	z-index: 10;
 	height: 2em;
 	margin-top: -2em;
-
 	font: 16px bold Tahoma;
-	color: white ;
+	color: white;
 	background: #003442;
+}
 
+.panel-footer a{
+	margin-right: 10px;
+	margin-left: 10px;
+	font: 15px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
 }
