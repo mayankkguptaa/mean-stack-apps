@@ -40,6 +40,7 @@
     function stateChangeSuccess(event, toState, toParams, fromState, fromParams) {
       $uibModalStack.dismissAll();
 
+      window.scrollTo(0, 0);
       // Record previous state
       storePreviousState(fromState, fromParams);
     }

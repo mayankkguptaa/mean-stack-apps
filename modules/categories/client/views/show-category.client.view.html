@@ -18,4 +18,13 @@
   </small>
   <p class="lead" ng-bind="vm.category.description"></p>
   <h3 class="lead" ng-bind="vm.category.price"></h3>
+  <button class="btn btn-primary" ng-click="vm.modalOpen()">Add New Material</button>
+  <br><br>
+  <div class="row" ng-repeat="week in [1, 2, 3, 4]">
+    <button class="btn btn-block" data-toggle="collapse" data-target="#week{{week}}">Week {{week}}</button>
+    <hr>
+    <div class="collapse" id="week{{week}}" ng-repeat="material in vm.category.materials | filter:{ week: week }:true">
+      <h2 ng-bind="material.title"></h2>
+    </div>
+  </div>
 </section>

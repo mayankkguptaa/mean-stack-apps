@@ -19,12 +19,12 @@ var MaterialSchema = new Schema({
     required: 'Description is required'
   },
   path: {
-    type: String,
-    required: 'Path to material required'
+    type: String
   },
   requiredDuration: Number,
   order: {
     type: Number,
+    unique: 'Material at this order already present',
     required: 'Order no. is required'
   },
   week: {

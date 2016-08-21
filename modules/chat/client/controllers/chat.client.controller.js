@@ -22,23 +22,14 @@
         $state.go('home');
       }
 
-      // Make sure the Socket is connected
-      if (!Socket.socket) {
-        Socket.connect();
-      }
-
-      Socket.on('connect', function () {
-        Socket.emit('room', Chat.roomName);
-      });
-
       // Add an event listener to the 'chatMessage' event
-      Socket.on('chatMessage', function (message) {
+      Socket.on('updateChat', function (message) {
         vm.messages.unshift(message);
       });
 
       // Remove the event listener when the controller instance is destroyed
       $scope.$on('$destroy', function () {
-        Socket.removeListener('chatMessage');
+        Socket.removeListener('sendChat');
       });
     }
 
@@ -53,7 +44,7 @@
       message = new MessagesService(message);
       message.$update({ roomName: Chat.roomName }, function (message) {
         // Emit a 'chatMessage' message event
-        Socket.emit('chatMessage', { message: message, room: Chat.roomName });
+        Socket.emit('sendChat', { message: message });
 
         // Clear the message text
         vm.messageText = '';
