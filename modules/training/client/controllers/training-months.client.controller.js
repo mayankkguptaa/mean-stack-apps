@@ -18,11 +18,14 @@
     vm.chosen = [];
     vm.selectError = false;
     vm.enableProceed = enableProceed;
+    vm.proceedClicked = proceedClicked;
     vm.cost = 0;
     vm.getCost = getCost;
     vm.animationsEnabled = true;
     vm.open = open;
-    
+    vm.discount = 0;
+    vm.authenticationMessage = false;
+
     CategoriesService.query(function (res) {
       _.map(res, function (val) {
         val.check = false;
@@ -32,6 +35,16 @@
         this.push(val);
       }, vm.categories);
     });
+
+    switch (parseInt(vm.months, 10)) {
+      case 1: vm.discount = 0;
+        break;
+      case 3: vm.discount = 10;
+        break;
+      case 6: vm.discount = 20;
+        break;
+      default: vm.discount = 0;
+    }
 
     function open(size) {
 
@@ -50,6 +63,9 @@
           },
           months: function () {
             return vm.months;
+          },
+          discount: function () {
+            return vm.discount;
           }
         }
       });
@@ -58,15 +74,12 @@
         $log.info('Modal dismissed at: ' + new Date());
       });
     }
-
-    switch (parseInt(vm.months, 10)) {
-      case 1: vm.discount = 0;
-        break;
-      case 3: vm.discount = 10;
-        break;
-      case 6: vm.discount = 20;
-        break;
-      default: vm.discount = 0;
+    function proceedClicked() {
+      if (vm.user) {
+        vm.getCost();
+      } else {
+        vm.authenticationMessage = true;
+      }
     }
 
     function getCost() {
@@ -95,7 +108,7 @@
         vm.selectError = false;
       }
     }
-    
+
     function enableProceed() {
       if (vm.chosen.length === vm.choices) {
         return false;
@@ -109,9 +122,9 @@
     .module('training')
     .controller('ModalCtrl', ModalCtrl);
 
-  ModalCtrl.$inject = ['months', 'chosen', 'cost', 'Authentication', '$uibModalInstance', 'UserCoursesService', '$state'];
+  ModalCtrl.$inject = ['months', 'chosen', 'discount', 'cost', 'Authentication', '$uibModalInstance', 'UserCoursesService', '$state'];
 
-  function ModalCtrl(months, chosen, cost, Authentication, $uibModalInstance, UserCoursesService, $state) {
+  function ModalCtrl(months, chosen, discount, cost, Authentication, $uibModalInstance, UserCoursesService, $state) {
     var vm = this;
 
     vm.months = months;
@@ -120,10 +133,14 @@
     vm.user = Authentication.user;
     vm.createUserCourse = createUserCourse;
     vm.resetChoices = resetChoices;
+    vm.discount = discount;
 
     function resetChoices() {
-      vm.chosen = null;
+      vm.chosen = [];
+      console.log(vm.chosen);
       vm.cancel();
+      
+
     }
 
     vm.cancel = function () {

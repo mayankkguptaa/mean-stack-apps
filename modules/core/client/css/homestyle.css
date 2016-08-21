@@ -1,70 +1,125 @@
+.contacts-home{
+	width: 100%;
+	background: rgb(213, 82, 86);
+	color: white;
+	height: 2.2em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	padding-top: 5px;
+	overflow: hidden;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.default-font{
+	font-family: 'Source Sans Pro', sans-serif;
+}
 .box1{
 	border:1px solid #D55256;
 	margin: 20px 45px 20px 45px;
 	border-radius: 10px;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
-.homebox1 p{
-	font: 20px bold Tahoma;
+.myCarousel{
+	max-height: 490px;
+	height: 480px;
+	overflow: hidden;
+	margin: 10px 0 30px 0;
+}
+
+.homebox1 {
+	margin-left: 2.8%;
+}
+
+
+.homebox1 p {
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
 	color: #D55256;
-
-}
-
-.divide {
-	border-top:13px solid #D55256;
-	margin-bottom: 50px ;
 }
 
 .expchat{
-	margin:20px 0 50px 0;
-	padding:40px 10px 40px 10px;
-	background: rgba(178, 178, 178, 0.29);
-	border: 1px solid #c6c6c6;
-
-
+	margin: 30px 0 10px 0;
+	padding:10px 10px 40px 10px;
+	background: rgba(192, 192, 192, 0.1);
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
 }
 
 .expchat h2{
 	width: 30%;
-	margin: 0 20px 50px 20px;
-	font: 40px bold Tahoma ;
-	border-bottom: 5px solid #9e9e9e;
+	margin: 16px 20px 20px 20px;
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
 	color: #D55256;
+
 }
 
 .expchat p{
-	font: 20px bold Arial;
+	font: 15px bold;
+	font-family: 'Source Sans Pro', sans-serif;
 	margin-bottom: 20px;
+	color: #003442;
 }
 .expchat h3{
-	font: 30px bold Tahoma;
-	margin:10px;
-	margin-top: 20px;
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 20px 10px 10px 10px;
+	color: #003442
 }
 
 .expchat hr{
-	height: 12px;
+	height: 2px;
     border: 0;
-    box-shadow: inset 0 12px 12px -12px #D55256;
+	width: 30%;
 }
 .expimg{
-	height: 160px;
-	width: 160px;
-	border:2px solid grey;
+	height: 120px;
+	width: 120px;
+	border:2px solid #dbdbdb;
 }
 
 section {
-    padding-top: 10px;
-    padding-bottom: 10px;
+	padding: 10px 0;
 }
-.carouselfeedback{
+.carouselfeedback {
 background-color: #003442;
 color: white;
-margin:70px 0px 70px 0px;
+margin: 10px 0px 70px 0px;
 }
 
+.center {
+	margin: auto;
+}
+
+.whyvc{
+	margin: 10px 0 10px 0;
+	padding: 0 30px 40px 30px;
+	background: rgba(192, 192, 192, 0.1);
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+	color: #003442;
+	font: 15px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.whyvc h1{
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
+	color: #D55256;
+}
+
+.carousel-feedback-heading{
+	margin: 30px;
+	color: white;
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+}
 .quote {
-    color: rgba(0,0,0,.1);
+    color: white;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -88,12 +143,14 @@ margin:70px 0px 70px 0px;
   bottom: 10px;
 }
 #fade-quote-carousel.carousel .carousel-indicators > li {
-  background-color: #e84a64;
+  background-color: white;
   border: none;
 }
 #fade-quote-carousel blockquote {
     text-align: center;
     border: none;
+	font: 16px bold;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 #fade-quote-carousel .profile-circle {
     width: 100px;
@@ -106,7 +163,51 @@ margin:70px 0px 70px 0px;
 	margin:20px;
 }
 
-#myCarousel{
-	max-height: 450px;
-	overflow: hidden;
+.carousel-caption{
+	margin-bottom: 50px;
 }
+
+.main-carousel-heading{
+	font: 50px bold;
+	font-family: 'Cinzel Decorative', cursive;
+}
+.main-carousel-subheading{
+	font: 30px bold;
+	font-family: 'Cinzel Decorative', cursive;
+}
+
+.testimonial-button{
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #003442;
+	float: right;
+	margin: 0;
+}
+
+.p-indent{
+	text-indent: 60px;
+}
+.abcd {
+	border: 1px solid black;
+}
+
+.categories-view p{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+}
+.categories-view h3{
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
+	color: #D55256;
+}
+
+.centerr {
+	margin-left: 20px;
+	border: 1px solid black;
+}
+
+.categories-view a{
+	text-decoration: none;
+	color: grey;
+}
+

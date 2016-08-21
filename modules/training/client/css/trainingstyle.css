@@ -54,10 +54,14 @@ hr {
 
 .wellmonthwise {
 	display: block;
-	margin: 10px;
+	margin: 0 10px 10px 10px;
 	border-radius: 15px;
 	background:#D55256;
-
+	padding-top: 0;
+	padding-bottom: 5px;
+}
+.authentication-message{
+	color: red;
 }
 .imgaftermonths{
 	display: block;
@@ -78,6 +82,9 @@ hr {
 	color: #D55256;
 	font-size: 20px;
 
+}
+.table-responsive td{
+	padding-left: 10px;
 }
 
 .category-selected{
@@ -113,6 +120,56 @@ hr {
 	color:white;
 	margin-top: 10px;
 	margin-bottom: 50px;
+}
+
+.user-name{
+	color: #D55256;
+}
+.payment-methods-nav li{
+	margin-right: 20px;
+}
+.payment-methods-nav li a:hover{
+	color: white;
+	background: #003442;
+}
+
+.payment-methods-nav li a:active{
+	color: #929292;
+	background: #003442;
+}
+
+.payment-methods-nav li a:focus{
+	color: white;
+	background: #D55256;
+}
+
+.payment-methods-nav{
+	margin-bottom: 20px;
+	margin-left: 10%;
+}
+
+.payment-methods{
+	width: 50%;
+	border: 2px solid #c6c6c6;
+	border-radius: 10px;
+	box-shadow: #c6c6c6 4px 4px 8px;
+	padding: 20px;
+	margin-left: 25%;
+	margin-top: 3%;
+}
+
+input{
+	margin: 5px;
+}
+
+.date-column{
+	width: 60px;
+	border-radius: 5px;
+}
+
+.set-margin{
+	margin-top: 20px;
+	margin-bottom: 0;
 }
 
 

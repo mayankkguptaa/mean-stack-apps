@@ -123,6 +123,24 @@
         data: {
           pageTitle: 'Password reset form'
         }
+      })
+      .state('dashboard', {
+        abstract: true,
+        url: '/dashboard',
+        templateUrl: 'modules/users/client/views/dashboard/dashboard-navigation.client.view.html',
+        controller: 'DashboardNavigationController',
+        controllerAs: 'vm',
+        template: '<ui-view/>',
+        data: {
+          pageTitle: 'Dashboard',
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dashboard.training', {
+        url: '/training',
+        templateUrl: 'modules/users/client/views/dashboard/dashboard-training.client.view.html',
+        controller: 'DashboardTrainingController',
+        controllerAs: 'vm'
       });
   }
 }());

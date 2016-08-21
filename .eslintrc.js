@@ -18,7 +18,7 @@ module.exports = {
     'keyword-spacing': [2, { before: true, after: true }],
     'max-len': 0,
     'new-cap': [2, { newIsCapExceptions: ['acl.memoryBackend', 'acl'] }],
-    'no-bitwise': 0,
+    'no-bi0-twise': 0,
     'no-caller': 2,
     'no-else-return': 0,
     'no-empty-class': 0,

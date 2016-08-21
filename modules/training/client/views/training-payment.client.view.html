@@ -1,3 +1,72 @@
+<link rel="stylesheet" type="text/css" href="modules/training/client/css/trainingstyle.css">
+
 <section>
-  <h1 ng-bind="vm.userCourse.user.displayName"></h1>
+  <h3>Hello, <span class="user-name">{{vm.userCourse.user.displayName}}</span> <br/><br/> Choose a payment method for the amount Rs.{{vm.cost}}</h3>
+
+<div class="payment-methods">
+  <div class="payment-methods-nav" align="center">
+    <ul class="nav nav-pills">
+
+      <li ng-class="{ focus:tab === 1}">
+        <a href ng-click = "tab = 1">NEFT</a> </li>
+      <li ng-class="{ focus:tab === 2}">
+        <a href ng-click = "tab = 2">Cash</a> </li>
+    </ul>
+  </div>
+
+<div ng-init="tab = 1">
+
+  <div class="panel" ng-show="tab === 1">
+    <blockquote>
+      NEFT
+    </blockquote>
+    <div>
+      <h3>Payment Details: </h3>
+      <table class="table-hover table-responsive">
+        <tr>
+          <td>Company Name: </td>
+          <td> VanityCube Mobile Spa and Salon Pvt. Ltd.</td>
+        </tr>
+        <tr>
+          <td>Bank Name:</td>
+          <td>HDFC Bank</td>
+        </tr>
+        <tr>
+          <td>Account Type: </td>
+          <td>Current</td>
+        </tr>
+        <tr>
+          <td>Branch: </td>
+          <td>Qutub Plaza, DLF phase 1, Gurgaon, 122002</td>
+        </tr>
+        <tr>
+          <td>A/C No:</td>
+          <td>50200003495632</td>
+        </tr>
+        <tr>
+          <td>IFSC Code:</td>
+          <td>HDFC0002853</td>
+        </tr>
+</table>
+
+    </div>
+  </div>
+
+  <div class="panel" ng-show="tab === 2">
+    <blockquote>
+      Net Banking
+    </blockquote>
+
+  </div>
+
+  <div class="panel" ng-show="tab === 3">
+    <blockquote>
+      Cash/ Cheque/ DD
+    </blockquote>
+  </div>
+</div>
+</div>
+  <div align="center">
+    <button class="btn btn-primary proceed-button" ng-click="vm.paymentDone()">Pay Now</button>
+  </div>
 </section>
