@@ -206,3 +206,8 @@ margin: 10px 0px 70px 0px;
 	border: 1px solid black;
 }
 
+.categories-view a{
+	text-decoration: none;
+	color: grey;
+}
+
