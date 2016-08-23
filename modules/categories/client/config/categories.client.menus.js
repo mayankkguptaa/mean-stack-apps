@@ -9,5 +9,6 @@
 
   // Configuring categories module
   function menuConfig(menuService) {
+
   }
 }());

@@ -44,6 +44,12 @@ module.exports = {
       limits: {
         fileSize: 1 * 1024 * 1024 // Max file size in bytes (1 MB)
       }
+    },
+    materialUpload: {
+      dest: './modules/categories/client/files/uploads/',
+      limits: {
+        fileSize: 10 * 1024 * 1024 // Max file size in bytes (10 MB)
+      }
     }
   }
 };
