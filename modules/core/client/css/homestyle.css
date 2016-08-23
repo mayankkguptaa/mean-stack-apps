@@ -57,16 +57,18 @@
 }
 
 .expchat p{
-	font: 15px bold;
+	font: 14px bold;
 	font-family: 'Source Sans Pro', sans-serif;
 	margin-bottom: 20px;
 	color: #003442;
+	margin-top: 3px;
 }
 .expchat h3{
 	font: 20px bold;
 	font-family: 'Source Sans Pro', sans-serif;
 	margin: 20px 10px 10px 10px;
-	color: #003442
+	color: #003442;
+
 }
 
 .expchat hr{
@@ -80,13 +82,28 @@
 	border:2px solid #dbdbdb;
 }
 
+.expert-chat-btn {
+	margin-bottom: 10px;
+}
+
+.testimonial-image{
+	background-color: rgba(0,0,0,.2);
+}
+
 section {
 	padding: 10px 0;
 }
 .carouselfeedback {
-background-color: #003442;
-color: white;
-margin: 10px 0px 70px 0px;
+	background-color: #003442;
+	color: white;
+	margin: 10px 0px 70px 0px;
+}
+
+.carouselfeedback blockquote{
+	min-height: 90px;
+}
+.carouselfeedback cite {
+	margin: 0 80px 0 0;
 }
 
 .center {
@@ -184,9 +201,6 @@ margin: 10px 0px 70px 0px;
 	margin: 0;
 }
 
-.p-indent{
-	text-indent: 60px;
-}
 .abcd {
 	border: 1px solid black;
 }

@@ -72,7 +72,7 @@
             <h3 ng-bind="expert.user.displayName"></h3>
             <hr/>
             <p ng-bind="expert.description"></p>
-            <a class="btn btn-success" ui-sref="chat.expert({ expertUserId: expert.user._id })">Chat</a>
+            <a class="btn btn-success expert-chat-btn" ui-sref="chat.expert({ expertUserId: expert.user._id })">Chat</a>
           </div>
         </div>
       </div>
@@ -83,42 +83,43 @@
           <div class="row" align="center">
             <div class="col-lg-12">
 
-              <a ui-sref="training.home">
-              <div class="col-lg-2" align="center">
-                <img src="modules/core/client/img/categories/facial.svg"/>
-                <p>Facial</p>
-              </div>
+              <a ui-sref="facial">
+                <div class="col-lg-2" align="center">
+                  <img src="modules/core/client/img/categories/facial.svg"/>
+                  <p>Facial</p>
+                </div>
               </a>
-              <a ui-sref="training.home">
-              <div class="col-lg-2" align="center">
-                <img src="modules/core/client/img/categories/hair.svg"/>
-                <p>Hair</p>
-              </div>
+              <a ui-sref="hair">
+                <div class="col-lg-2" align="center">
+                  <img src="modules/core/client/img/categories/hair.svg"/>
+                  <p>Hair</p>
+                </div>
               </a>
-              <a ui-sref="training.home">
-              <div class="col-lg-2" align="center">
-                <img src="modules/core/client/img/categories/makeup.svg"/>
-                <p>Makeup</p>
-              </div>
+              <a ui-sref="makeUp">
+                <div class="col-lg-2" align="center">
+                  <img src="modules/core/client/img/categories/makeup.svg"/>
+                  <p>Makeup</p>
+                </div>
               </a>
-              <a ui-sref="training.home">
-              <div class="col-lg-2" align="center">
-                <img src="modules/core/client/img/categories/body.svg"/>
-                <p>Body</p>
-              </div>
-                </a>
-              <a ui-sref="training.home">
-              <div class="col-lg-2" align="center">
-                <img src="modules/core/client/img/categories/massage.svg"/>
-                <p>Massage</p>
-              </div>
-                </a>
-              <a ui-sref="training.home">
-              <div class="col-lg-2" align="center">
-                <img src="modules/core/client/img/categories/packages.svg"/>
-                <p>See our Packages</p>
-              </div>
+              <a ui-sref="nail">
+                <div class="col-lg-2" align="center">
+                  <img src="modules/core/client/img/categories/nail.svg"/>
+                  <p>Nails</p>
+                </div>
               </a>
+              <a ui-sref="massage">
+                <div class="col-lg-2" align="center">
+                  <img src="modules/core/client/img/categories/massage.svg"/>
+                  <p>Massage</p>
+                </div>
+              </a>
+              <a ui-sref="body">
+                <div class="col-lg-2" align="center">
+                  <img src="modules/core/client/img/categories/body.svg"/>
+                  <p>Body</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -135,46 +136,37 @@
                   <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
                   <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
                   <li data-target="#fade-quote-carousel" data-slide-to="2" ></li>
-                  <li data-target="#fade-quote-carousel" data-slide-to="3"></li>
+                  <!--<li data-target="#fade-quote-carousel" data-slide-to="3"></li>
                   <li data-target="#fade-quote-carousel" data-slide-to="4"></li>
-                  <li data-target="#fade-quote-carousel" data-slide-to="5"></li>
+                  <li data-target="#fade-quote-carousel" data-slide-to="5"></li>-->
                 </ol>
                 <!-- Carousel items -->
                 <div class="carousel-inner">
                   <div class="item">
-                    <div class="profile-circle" style="background-color: rgba(0,0,0,.2);"></div>
+                    <div class="profile-circle testimonial-image"><img class="profile-circle testimonial-image" src="modules/core/client/img/testimonial/20160821_173423.jpg" /></div>
                     <blockquote>
-                      <p>Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.</p>
+                      <p>I always had a dream to become a successful beauty professional but did not had money to go to a coaching institute . I got to know about VanityCube where the training course was affordable compared to other training institute. In the 6 month training course I learnt manicure, pedicure, facial, massages, waxing and hair spa. Today I work with VanityCube and very happy to be independent.</p>
+                      <cite class="pull-right">
+                        -Priya
+                      </cite>
                     </blockquote>
                   </div>
                   <div class="item">
-                    <div class="profile-circle" style="background-color: rgba(77,5,51,.2);"></div>
+                    <div class="profile-circle testimonial-image"><img class="profile-circle testimonial-image" src="modules/core/client/img/testimonial/20160821_173350.jpg" /></div>
                     <blockquote>
-                      <p>Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.</p>
+                      <p>Unlike other training institute VanityCube helped me learnt beauty skills faster and within 6 months. I work with a reputed Salon today and very happy.</p>
+                      <cite class="pull-right">
+                        -Ruksana
+                      </cite>
                     </blockquote>
                   </div>
                   <div class="active item">
-                    <div class="profile-circle" style="background-color: rgba(145,169,216,.2);"></div>
+                    <div class="profile-circle testimonial-image"><img class="profile-circle testimonial-image" src="modules/core/client/img/testimonial/20160821_173443.jpg" /></div>
                     <blockquote>
-                      <p>Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.</p>
-                    </blockquote>
-                  </div>
-                  <div class="item">
-                    <div class="profile-circle" style="background-color: rgba(77,5,51,.2);"></div>
-                    <blockquote>
-                      <p>Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.</p>
-                    </blockquote>
-                  </div>
-                  <div class="item">
-                    <div class="profile-circle" style="background-color: rgba(77,5,51,.2);"></div>
-                    <blockquote>
-                      <p>Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.</p>
-                    </blockquote>
-                  </div>
-                  <div class="item">
-                    <div class="profile-circle" style="background-color: rgba(77,5,51,.2);"></div>
-                    <blockquote>
-                      <p>Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.</p>
+                      <p> I am a beautician working in this industry from past 6 years and I wanted to learn makeup and hair. I joined VanityCube where trainers were hands on and very supportive. Their experts are very good and I am really happy with your experience. </p>
+                      <cite class="pull-right">
+                        -Sheela
+                      </cite>
                     </blockquote>
                   </div>
                 </div>
@@ -188,14 +180,14 @@
 
         </div>
       </section>
-      <div class="whyvc" >
+      <div class="whyvc" align="center">
 
         <h1 align="center">WHY VANITY CUBE ?</h1>
 
         <p>Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.
           Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.
         </p>
-        <p class="p-indent">Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.
+        <p>Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.
           Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.Vanity Cube is the best platform. I loved its service. The website is so nice I liked it when i first saw it. Mayank is also a nice person because I'm writing this.
         </p>
 

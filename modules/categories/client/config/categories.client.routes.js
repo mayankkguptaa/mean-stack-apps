@@ -58,6 +58,48 @@
         data: {
           pageTitle: 'Category {{ categoryResolve.name }}'
         }
+      })
+      .state('facial', {
+        url: '/Facial',
+        templateUrl: 'modules/categories/client/views/facial.client.view.html',
+        data: {
+          pageTitle: 'Facial'
+        }
+      })
+      .state('body', {
+        url: '/Body',
+        templateUrl: 'modules/categories/client/views/body.client.view.html',
+        data: {
+          pageTitle: 'Body'
+        }
+      })
+      .state('hair', {
+        url: '/Hair',
+        templateUrl: 'modules/categories/client/views/hair.client.view.html',
+        data: {
+          pageTitle: 'Hair'
+        }
+      })
+      .state('makeUp', {
+        url: '/MakeUp',
+        templateUrl: 'modules/categories/client/views/makeUp.client.view.html',
+        data: {
+          pageTitle: 'Make Up'
+        }
+      })
+      .state('massage', {
+        url: '/Massage',
+        templateUrl: 'modules/categories/client/views/massage.client.view.html',
+        data: {
+          pageTitle: 'Massage'
+        }
+      })
+      .state('nail', {
+        url: '/Nail',
+        templateUrl: 'modules/categories/client/views/nail.client.view.html',
+        data: {
+          pageTitle: 'Nail'
+        }
       });
 
     getCategory.$inject = ['$stateParams', 'CategoriesService'];

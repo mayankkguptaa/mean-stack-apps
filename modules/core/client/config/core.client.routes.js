@@ -57,25 +57,39 @@
           pageTitle: 'Forbidden'
         }
       })
-      .state('faq.home', {
+      .state('faq', {
         url: '/FAQ',
         templateUrl: 'modules/core/client/views/faq.client.view.html',
-        data: {
+        data: {          
           pageTitle: 'Frequently Asked Questions'
         }
       })
-      .state('aboutus.home', {
-        url: '/AboutUs',
-        templateUrl: 'modules/core/client/views/aboutus.client.view.html',
+      .state('about', {
+        url: '/About',
+        templateUrl: 'modules/core/client/views/about.client.view.html',
         data: {
-          pageTitle: 'About Us'
+          pageTitle: 'About'
         }
       })
-      .state('contactus.home', {
+      .state('contactUs', {
         url: '/ContactUs',
-        templateUrl: 'modules/core/client/views/contactus.client.view.html',
+        templateUrl: 'modules/core/client/views/contactUs.client.view.html',
         data: {
-          pageTitle: 'Frequently Asked Questions'
+          pageTitle: 'Contact Us'
+        }
+      })
+      .state('termsAndConditions', {
+        url: '/TermsAndConditions',
+        templateUrl: 'modules/core/client/views/termsAndConditions.client.view.html',
+        data: {
+          pageTitle: 'Terms And Conditions'
+        }
+      })
+      .state('privacyPolicy', {
+        url: '/PrivacyPolicy',
+        templateUrl: 'modules/core/client/views/privacyPolicy.client.view.html',
+        data: {
+          pageTitle: 'Privacy Policy'
         }
       });
   }
