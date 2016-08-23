@@ -3,6 +3,21 @@
     position: fixed;
   }
 }
+/*
+.blue-style-box {
+	background: #003442;
+	border-radius: 10px;
+	width: 100%;
+	border: 1px solid black;
+
+}
+
+.blue-style-box input{
+	width: 90%;
+	margin: 10px;
+}
+*/
+
 .social-account-container {
   display: inline-block;
   position: relative;

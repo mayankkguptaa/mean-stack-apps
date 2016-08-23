@@ -1,63 +1,125 @@
+.contacts-home{
+	width: 100%;
+	background: rgb(213, 82, 86);
+	color: white;
+	height: 2.2em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	padding-top: 5px;
+	overflow: hidden;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.default-font{
+	font-family: 'Source Sans Pro', sans-serif;
+}
 .box1{
 	border:1px solid #D55256;
 	margin: 20px 45px 20px 45px;
 	border-radius: 10px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.myCarousel{
+	max-height: 490px;
+	height: 480px;
+	overflow: hidden;
+	margin: 10px 0 30px 0;
+}
+
+.homebox1 {
+	margin-left: 2.8%;
 }
 
 
+.homebox1 p {
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #D55256;
+}
 
-#homebox1 p{
-	font: 20px bold Tahoma;
+.expchat{
+	margin: 30px 0 10px 0;
+	padding:10px 10px 40px 10px;
+	background: rgba(192, 192, 192, 0.1);
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.expchat h2{
+	width: 30%;
+	margin: 16px 20px 20px 20px;
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
 	color: #D55256;
 
 }
 
-#expchat{
-	margin:20px 10px 50px 10px;
-	border-top:13px solid #D55256;
-
-}
-
-#expchat h2{
-	width: 30%;
-	margin: 50px 20px 50px 20px;
-	font: 40px bold Arial grey;
-	border-bottom: 5px solid grey;
-}
-
-#expchat p{
-	font: 20px bold Arial;
+.expchat p{
+	font: 15px bold;
+	font-family: 'Source Sans Pro', sans-serif;
 	margin-bottom: 20px;
+	color: #003442;
 }
-#expchat h3{
-	font: 30px bold Arial;
-	margin:10px;
-	margin-top: 20px;
+.expchat h3{
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 20px 10px 10px 10px;
+	color: #003442
 }
 
-#expchat hr{
-	height: 12px;
+.expchat hr{
+	height: 2px;
     border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+	width: 30%;
 }
 .expimg{
-	height: 160px;
-	width: 160px;
-	border:2px solid #D55256;
+	height: 120px;
+	width: 120px;
+	border:2px solid #dbdbdb;
 }
 
 section {
-    padding-top: 10px;
-    padding-bottom: 10px;
+	padding: 10px 0;
 }
-#carouselfeedback{
+.carouselfeedback {
 background-color: #003442;
 color: white;
-margin:70px 0px 70px 0px;
+margin: 10px 0px 70px 0px;
 }
 
+.center {
+	margin: auto;
+}
+
+.whyvc{
+	margin: 10px 0 10px 0;
+	padding: 0 30px 40px 30px;
+	background: rgba(192, 192, 192, 0.1);
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+	color: #003442;
+	font: 15px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.whyvc h1{
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
+	color: #D55256;
+}
+
+.carousel-feedback-heading{
+	margin: 30px;
+	color: white;
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+}
 .quote {
-    color: rgba(0,0,0,.1);
+    color: white;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -81,12 +143,14 @@ margin:70px 0px 70px 0px;
   bottom: 10px;
 }
 #fade-quote-carousel.carousel .carousel-indicators > li {
-  background-color: #e84a64;
+  background-color: white;
   border: none;
 }
 #fade-quote-carousel blockquote {
     text-align: center;
     border: none;
+	font: 16px bold;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 #fade-quote-carousel .profile-circle {
     width: 100px;
@@ -97,5 +161,53 @@ margin:70px 0px 70px 0px;
 
 #feedbackbtn{
 	margin:20px;
+}
+
+.carousel-caption{
+	margin-bottom: 50px;
+}
+
+.main-carousel-heading{
+	font: 50px bold;
+	font-family: 'Cinzel Decorative', cursive;
+}
+.main-carousel-subheading{
+	font: 30px bold;
+	font-family: 'Cinzel Decorative', cursive;
+}
+
+.testimonial-button{
+	font: 20px bold;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #003442;
+	float: right;
+	margin: 0;
+}
+
+.p-indent{
+	text-indent: 60px;
+}
+.abcd {
+	border: 1px solid black;
+}
+
+.categories-view p{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+}
+.categories-view h3{
+	font: 30px bold;
+	font-family: 'Montserrat', sans-serif;
+	color: #D55256;
+}
+
+.centerr {
+	margin-left: 20px;
+	border: 1px solid black;
+}
+
+.categories-view a{
+	text-decoration: none;
+	color: grey;
 }
 

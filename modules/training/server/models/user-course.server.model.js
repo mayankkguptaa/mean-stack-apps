@@ -24,9 +24,9 @@ var UserCourseSchema = new Schema({
     ref: 'User',
     required: 'Current user is required'
   },
-  price: {
+  cost: {
     type: Number,
-    required: 'Price is required'
+    required: 'Cost is required'
   },
   paymentConfirm: {
     type: Boolean,

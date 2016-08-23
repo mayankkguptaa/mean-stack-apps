@@ -18,7 +18,7 @@ hr {
 	margin: 0px 10px 0px 10px;
 }
 
-.courseheading{
+.courseHeading{
 	color: #D55256;
 	font-size: 40px;
 	text-indent: 10px;
@@ -26,22 +26,23 @@ hr {
 
 }
 
-.coursesstyle img{
+.coursesStyle img{
 	max-width: 315px;
 	max-height: 150px;
 	margin-bottom: 20px;
 	border-radius: 10px;
 }
 
-.coursesstyle h2{
+.coursesStyle h2{
 	color: white;
 	margin-bottom: 20px;
 	font-size: 35px;
 
 }
-.coursesstyle p {
-font-size: 20px;
+.coursesStyle p {
+	font-size: 17px;
 	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .wellcourse{
@@ -53,19 +54,164 @@ font-size: 20px;
 
 .wellmonthwise {
 	display: block;
-	margin: 10px;
+	margin: 0 10px 10px 10px;
 	border-radius: 15px;
 	background:#D55256;
-
+	padding-top: 0;
+	padding-bottom: 5px;
+}
+.authentication-message{
+	color: red;
 }
 .imgaftermonths{
 	display: block;
 	margin: 30px;
 }
 
+.list-categories{
+	padding: 10px;
+	border: 1px solid #D55256;
+	margin: 10px;
+	border-radius: 5px;
+	display: block;
+	-webkit-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	-moz-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	margin-bottom: 30px;
+	background: white;
+	color: #D55256;
+	font-size: 20px;
+
+}
+.table-responsive td{
+	padding-left: 10px;
+}
+
+.category-selected{
+	padding: 10px;
+	border: 1px solid #D55256;
+	margin: 10px;
+	border-radius: 5px;
+	display: block;
+	-webkit-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	-moz-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
+	margin-bottom: 30px;
+	background: #D55256;
+	color: white;
+	font-size: 20px;
+}
+
+.category-description {
+	position: absolute;
+	z-index: 100;
+	top: 70px;
+	left: 28px;
+	display: block;
+	color: white;
+	background: #003442;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.proceed-button{
+	text-decoration: none;
+	background-color: #D55256;
+	color:white;
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+.user-name{
+	color: #D55256;
+}
+.payment-methods-nav li{
+	margin-right: 20px;
+}
+.payment-methods-nav li a:hover{
+	color: white;
+	background: #003442;
+}
+
+.payment-methods-nav li a:active{
+	color: #929292;
+	background: #003442;
+}
+
+.payment-methods-nav li a:focus{
+	color: white;
+	background: #D55256;
+}
+
+.payment-methods-nav{
+	margin-bottom: 20px;
+	margin-left: 10%;
+}
+
+.payment-methods{
+	width: 50%;
+	border: 2px solid #c6c6c6;
+	border-radius: 10px;
+	box-shadow: #c6c6c6 4px 4px 8px;
+	padding: 20px;
+	margin-left: 25%;
+	margin-top: 3%;
+}
+
+input{
+	margin: 5px;
+}
+
+.date-column{
+	width: 60px;
+	border-radius: 5px;
+}
+
+.set-margin{
+	margin-top: 20px;
+	margin-bottom: 0;
+}
 
 
 
+/* when showing the picture */
+.ng-hide-remove{
+	animation:0.5s flipInX ease;
+}
 
+/* ANIMATIONS (FROM ANIMATE.CSS) ======================== */
+/* flip in */
+@keyframes flipInX {
+	0% {
+		transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+		transition-timing-function: ease-in;
+		opacity: 0;
+	}
 
+	40% {
+		transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+		transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+		transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+		transition-timing-function: ease-in;
+		transition-timing-function: ease-in;
+	}
 
+	60% {
+		transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+		transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+		transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+		opacity: 1;
+	}
+
+	80% {
+		transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+		transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+		transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+	}
+
+	100% {
+		transform: perspective(400px);
+		transform: perspective(400px);
+		transform: perspective(400px);
+	}
+}

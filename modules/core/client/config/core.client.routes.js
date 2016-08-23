@@ -56,6 +56,27 @@
           ignoreState: true,
           pageTitle: 'Forbidden'
         }
+      })
+      .state('faq.home', {
+        url: '/FAQ',
+        templateUrl: 'modules/core/client/views/faq.client.view.html',
+        data: {
+          pageTitle: 'Frequently Asked Questions'
+        }
+      })
+      .state('aboutus.home', {
+        url: '/AboutUs',
+        templateUrl: 'modules/core/client/views/aboutus.client.view.html',
+        data: {
+          pageTitle: 'About Us'
+        }
+      })
+      .state('contactus.home', {
+        url: '/ContactUs',
+        templateUrl: 'modules/core/client/views/contactus.client.view.html',
+        data: {
+          pageTitle: 'Frequently Asked Questions'
+        }
       });
   }
 }());
