@@ -42,6 +42,7 @@
 .expchat{
 	margin: 30px 0 10px 0;
 	padding:10px 10px 40px 10px;
+	background: grey;
 	background: rgba(192, 192, 192, 0.1);
 	border-top: 1px solid #dbdbdb;
 	border-bottom: 1px solid #dbdbdb;
@@ -87,6 +88,7 @@
 }
 
 .testimonial-image{
+	background-color: darkgrey;
 	background-color: rgba(0,0,0,.2);
 }
 
@@ -96,7 +98,7 @@ section {
 .carouselfeedback {
 	background-color: #003442;
 	color: white;
-	margin: 10px 0px 70px 0px;
+	margin: 10px 0 70px 0;
 }
 
 .carouselfeedback blockquote{
@@ -111,8 +113,9 @@ section {
 }
 
 .whyvc{
-	margin: 10px 0 10px 0;
+	margin: 10px 0 60px 0;
 	padding: 0 30px 40px 30px;
+	background: darkgrey;
 	background: rgba(192, 192, 192, 0.1);
 	border-top: 1px solid #dbdbdb;
 	border-bottom: 1px solid #dbdbdb;
@@ -141,54 +144,67 @@ section {
     margin-bottom: 30px;
 }
 
-#fade-quote-carousel.carousel {
+.fade-quote-carousel.carousel {
   padding-bottom: 60px;
 }
-#fade-quote-carousel.carousel .carousel-inner .item {
+.fade-quote-carousel.carousel .carousel-inner .item {
   opacity: 0;
   -webkit-transition-property: opacity;
-	  -ms-transition-property: opacity;
+	  -moz-transition-property: opacity;
+		-o-transition-property: opacity;
           transition-property: opacity;
 }
-#fade-quote-carousel.carousel .carousel-inner .active {
+.fade-quote-carousel.carousel .carousel-inner .active {
   opacity: 1;
   -webkit-transition-property: opacity;
-      -ms-transition-property: opacity;
+      -moz-transition-property: opacity;
+	-o-transition-property: opacity;
           transition-property: opacity;
 }
-#fade-quote-carousel.carousel .carousel-indicators {
+.fade-quote-carousel.carousel .carousel-indicators {
   bottom: 10px;
 }
-#fade-quote-carousel.carousel .carousel-indicators > li {
+.fade-quote-carousel.carousel .carousel-indicators > li {
   background-color: white;
   border: none;
 }
-#fade-quote-carousel blockquote {
+.fade-quote-carousel blockquote {
     text-align: center;
     border: none;
 	font: 16px bold;
 	font-family: 'Source Sans Pro', sans-serif;
 }
-#fade-quote-carousel .profile-circle {
+.fade-quote-carousel .profile-circle {
     width: 100px;
     height: 100px;
     margin: 0 auto;
     border-radius: 100px;
 }
 
-#feedbackbtn{
+.feedbackbtn {
 	margin:20px;
 }
 
-.carousel-caption{
+.testimonial-login-message {
+	font-size: 14px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 500;
+	color: white;
+	position: relative;
+	top: 0;
+	left: 140px;
+
+}
+
+.carousel-caption {
 	margin-bottom: 50px;
 }
 
-.main-carousel-heading{
+.main-carousel-heading {
 	font: 50px bold;
 	font-family: 'Cinzel Decorative', cursive;
 }
-.main-carousel-subheading{
+.main-carousel-subheading {
 	font: 30px bold;
 	font-family: 'Cinzel Decorative', cursive;
 }
@@ -199,10 +215,6 @@ section {
 	color: #003442;
 	float: right;
 	margin: 0;
-}
-
-.abcd {
-	border: 1px solid black;
 }
 
 .categories-view p{

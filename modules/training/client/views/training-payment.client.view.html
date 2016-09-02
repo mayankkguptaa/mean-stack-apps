@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="modules/training/client/css/trainingstyle.css">
 
-<section>
-  <h3>Hello, <span class="user-name">{{vm.userCourse.user.displayName}}</span> <br/><br/> Choose a payment method for the amount Rs.{{vm.cost}}</h3>
+<section class="payment-first-page">
+  <h2>Hello, <span class="user-name">{{vm.userCourse.user.displayName}}</span>, Choose a payment method for the amount Rs.{{vm.cost}}</h2>
 
 <div class="payment-methods">
   <div class="payment-methods-nav" align="center">
@@ -54,15 +54,21 @@
 
   <div class="panel" ng-show="tab === 2">
     <blockquote>
-      Net Banking
-    </blockquote>
-
-  </div>
-
-  <div class="panel" ng-show="tab === 3">
-    <blockquote>
       Cash/ Cheque/ DD
     </blockquote>
+
+    <div>
+      <h3>
+        For cash payment kindly visit the below mentioned address :
+      </h3>
+      <div>
+        VanityCube<br/>
+        H16/6<br/>
+        DLF phase 1<br/>
+        Gurgaon - 122002
+      </div>
+    </div>
+
   </div>
 </div>
 </div>

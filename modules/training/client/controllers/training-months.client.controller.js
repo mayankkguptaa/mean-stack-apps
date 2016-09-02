@@ -25,6 +25,7 @@
     vm.open = open;
     vm.discount = 0;
     vm.authenticationMessage = false;
+    vm.imageCounter = 1;
 
     CategoriesService.query(function (res) {
       _.map(res, function (val) {
@@ -74,6 +75,7 @@
         $log.info('Modal dismissed at: ' + new Date());
       });
     }
+    
     function proceedClicked() {
       if (vm.user) {
         vm.getCost();
@@ -91,7 +93,7 @@
 
       totalPrice = totalPrice - (totalPrice * vm.discount) / 100;
       vm.cost = totalPrice;
-      vm.open('lg');
+      vm.open('md');
     }
 
     function selectCategory(category) {
@@ -136,13 +138,9 @@
     vm.discount = discount;
 
     function resetChoices() {
-      vm.chosen = [];
-      console.log(vm.chosen);
       vm.cancel();
-      
-
     }
-
+   
     vm.cancel = function () {
       $uibModalInstance.dismiss('cancel');
     };

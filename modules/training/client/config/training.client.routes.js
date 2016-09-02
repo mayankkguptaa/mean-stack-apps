@@ -24,7 +24,7 @@
         }
       })
       .state('training.months', {
-        url: '/:months',
+        url: '/:months-month-course',
         templateUrl: 'modules/training/client/views/training-months.client.view.html',
         controller: 'TrainingMonthsController',
         controllerAs: 'vm',

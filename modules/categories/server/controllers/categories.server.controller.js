@@ -64,7 +64,6 @@ exports.materialList = function (req, res) {
 exports.update = function (req, res) {
   var category = req.category;
 
-  category.name = req.body.name ? req.body.name : category.name;
   category.description = req.body.description ? req.body.description : category.description;
   category.price = req.body.price ? req.body.price : category.price;
 

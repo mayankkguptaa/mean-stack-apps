@@ -58,21 +58,21 @@
         }
       })
       .state('faq', {
-        url: '/FAQ',
+        url: '/faq',
         templateUrl: 'modules/core/client/views/faq.client.view.html',
         data: {          
           pageTitle: 'Frequently Asked Questions'
         }
       })
       .state('about', {
-        url: '/About',
+        url: '/about',
         templateUrl: 'modules/core/client/views/about.client.view.html',
         data: {
           pageTitle: 'About'
         }
       })
       .state('contactUs', {
-        url: '/ContactUs',
+        url: '/contact',
         templateUrl: 'modules/core/client/views/contactUs.client.view.html',
         data: {
           pageTitle: 'Contact Us'

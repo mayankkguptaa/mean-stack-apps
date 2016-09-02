@@ -130,12 +130,13 @@
             <div class="col-md-10 col-md-offset-1">
               <div align="center" class="carousel-feedback-heading">Our Testimonials</div>
               <div class="quote"><i class="fa fa-quote-left fa-2x"></i></div>
-              <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000" data-pause="false">
+              <div class="carousel slide fade-quote-carousel" id="fade-quote-carousel"
+                   data-ride="carousel" data-interval="3000" data-pause="false">
                 <!-- Carousel indicators -->
                 <ol class="carousel-indicators">
-                  <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
-                  <li data-target="#fade-quote-carousel" data-slide-to="2" ></li>
+                  <li data-target=".fade-quote-carousel" data-slide-to="0" class="active"></li>
+                  <li data-target=".fade-quote-carousel" data-slide-to="1"></li>
+                  <li data-target=".fade-quote-carousel" data-slide-to="2" ></li>
                   <!--<li data-target="#fade-quote-carousel" data-slide-to="3"></li>
                   <li data-target="#fade-quote-carousel" data-slide-to="4"></li>
                   <li data-target="#fade-quote-carousel" data-slide-to="5"></li>-->
@@ -175,7 +176,12 @@
           </div>
 
           <div>
-            <button type="button" class="btn btn-success testimonial-button"  id="feedbackbtn" >Submit a testimonial</button>
+
+            <button type="button" class="btn btn-success testimonial-button feedbackbtn"
+                    data-toggle="modal" ng-click="vm.submitTestimonialClicked()"
+                    id="feedbackbtn" >Submit a testimonial</button>
+            <span ng-show="vm.canNotSubmitTestimonialMsg"
+                  class="testimonial-login-message pull-right">*First Log-In</span>
           </div>
 
         </div>

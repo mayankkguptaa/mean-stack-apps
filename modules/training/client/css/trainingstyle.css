@@ -1,125 +1,247 @@
 .hwtstyle h1 {
 	color: #D55256;
-	margin: 0px 10px 0px 10px;
-	font-size: 40px;
+	margin: 20px 10px 10px 20px;
+	font-size: 30px;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .hwtstyle p {
-	font-size: 20px;
-	text-indent: 20px;
-	margin: 0px 10px 20px 10px;
-	color: #7f7f7f;
+	font-size: 16px;
+	margin-top: 10px;
+	width: 90%;
+	color: black;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 hr {
 	height: 12px;
 	border: 0;
 	box-shadow: inset 0 12px 12px -12px rgba(213, 82, 86, 0.9);
-	margin: 0px 10px 0px 10px;
+	margin: 0;
+}
+
+.exemplar h1 {
+	color: #D55256;
+	margin: 20px 10px 10px 20px;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.exemplar h2 {
+	color: #D55256;
+	margin: 20px 10px 10px 20px;
+	font-size: 16px;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-indent: 30px;
+}
+
+.theory {
+	background: #f2f2f2;
+	padding: 10px;
+	max-height: 400px;
+	overflow-y: scroll;
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
 }
 
 .courseHeading{
 	color: #D55256;
-	font-size: 40px;
-	text-indent: 10px;
-	margin-top: 60px;
+	font-size: 30px;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 40px;
 
+}
+
+.coursesStyle {
+	padding: 10px;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .coursesStyle img{
 	max-width: 315px;
 	max-height: 150px;
-	margin-bottom: 20px;
+	margin: 0 auto;
 	border-radius: 10px;
 }
 
 .coursesStyle h2{
 	color: white;
 	margin-bottom: 20px;
-	font-size: 35px;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
 
 }
 .coursesStyle p {
-	font-size: 17px;
+	font-size: 16px;
 	color: white;
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
-.wellcourse{
+.well-course {
 	display: block;
-	margin: 10px;
-	background:#BD2E32;
-	border-radius: 30px;
+	margin: 10px 10px 30px 10px;
+	background: #D55256;
+	border-radius: 5px;
+}
+
+.courseDescription {
+	margin-top: 20px;
+}
+
+/*training page 2 styles*/
+
+.overlap-top-margin {
+	margin-top: -15px;
 }
 
 .wellmonthwise {
 	display: block;
-	margin: 0 10px 10px 10px;
-	border-radius: 15px;
-	background:#D55256;
-	padding-top: 0;
+	margin: 0 0 10px 0;
+	border-radius: 0;
+	background: #D55256;
+	padding-top: 5px;
 	padding-bottom: 5px;
 }
+
+.wellmonthwise-box img {
+	width: 50%;
+}
+
+.wellmonthwise h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	color: white;
+}
+
+.wellmonthwise p {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	color: white;
+}
+
 .authentication-message{
 	color: red;
+	margin-top: 30px;
 }
 .imgaftermonths{
 	display: block;
 	margin: 30px;
 }
 
-.list-categories{
-	padding: 10px;
+.table-responsive td{
+	padding-left: 10px;
+}
+
+.wellmonthwise-box {
+
 	border: 1px solid #D55256;
-	margin: 10px;
-	border-radius: 5px;
 	display: block;
 	-webkit-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
 	-moz-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
 	box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
-	margin-bottom: 30px;
+	background: white;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding-bottom: 0;
+}
+
+
+.list-categories{
+	padding: 10px;
+	border-top: 1px solid #D55256;
+	margin: 0;
 	background: white;
 	color: #D55256;
 	font-size: 20px;
 
 }
-.table-responsive td{
-	padding-left: 10px;
-}
 
 .category-selected{
 	padding: 10px;
-	border: 1px solid #D55256;
-	margin: 10px;
-	border-radius: 5px;
-	display: block;
-	-webkit-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
-	-moz-box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
-	box-shadow: 6px 6px 15px -4px rgba(213,82,86,1);
-	margin-bottom: 30px;
+	border-top: 1px solid #D55256;
+	margin: 0;
 	background: #D55256;
 	color: white;
 	font-size: 20px;
 }
 
 .category-description {
-	position: absolute;
-	z-index: 100;
-	top: 70px;
-	left: 28px;
-	display: block;
-	color: white;
-	background: #003442;
+	color: #D55256;
 	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	margin: 0;
+	padding-bottom: 10px;
 }
-
 
 .proceed-button{
 	text-decoration: none;
-	background-color: #D55256;
+	background: #D55256;
+	border: 2px solid #D55256;
 	color:white;
-	margin-top: 10px;
-	margin-bottom: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.tncCheckbox {
+	border: 1px solid #D55256;
+	border-radius: 5px;
+	padding: 10px;
+	width: inherit;
+}
+
+.choice-finalisation-modal {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+}
+
+.choice-finalisation-modal .modal-header {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 30px;
+	color: #D55256;
+}
+
+.choice-finalisation-modal th {
+	font-size: 16px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+
+.choice-finalisation-modal .modal-body {
+	border: 5px solid #dbdbdb;
+}
+
+.proceed-modal-buttons button,
+.proceed-modal-buttons button:active,
+.proceed-modal-buttons button:focus,
+.proceed-modal-buttons button:hover {
+	color: white;
+	background: #D55256;
+	border: 2px solid #D55256;
+}
+
+.proceed-modal-buttons button:disabled {
+	color: white;
+	background: #D55256;
+}
+
+.payment-first-page {
+	border: 1px solid #dbdbdb;
+	margin: 20px;
+	border-radius: 10px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+}
+
+.payment-first-page h2 {
+	text-indent: 40px;
+}
+
+.payment-first-page h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	color: #D55256;
 }
 
 .user-name{
@@ -172,15 +294,20 @@ input{
 	margin-bottom: 0;
 }
 
+.abc {
+	border: 10px solid #D55256;
+}
 
 
-/* when showing the picture */
+
+/*
+!* when showing the picture *!
 .ng-hide-remove{
 	animation:0.5s flipInX ease;
 }
 
-/* ANIMATIONS (FROM ANIMATE.CSS) ======================== */
-/* flip in */
+!* ANIMATIONS (FROM ANIMATE.CSS) ======================== *!
+!* flip in *!
 @keyframes flipInX {
 	0% {
 		transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
@@ -189,8 +316,6 @@ input{
 	}
 
 	40% {
-		transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-		transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
 		transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
 		transition-timing-function: ease-in;
 		transition-timing-function: ease-in;
@@ -215,3 +340,4 @@ input{
 		transform: perspective(400px);
 	}
 }
+*/

@@ -1,63 +1,53 @@
-.parentofvp {
-	max-height: 380px;
-	max-width: 1000px;
-	min-height: 360px;
-	min-width: 800px;
-	overflow: auto;
-
-}
-
-#video_player {
-	display: table;
+.video-player {
+	/*display: table;*/
 	line-height: 10px;
 	background: #003442;
-	margin: 0px 0px 0px 30px;
-	float: left;
-	padding-top: 10px;
-	padding-right: 10px;
-	border-radius: 15px;
-
+	padding: 20px;
 }
-#video_container {
-	position: relative;
+.video-container {
 	border: 10px solid #003442;
-	height: 340px;
-	width: 640px;
+	height: 430px;
+	width: 730px;
 	overflow: auto;
+	margin: 0 auto;
 }
-#video_player div, #video_player figcaption {
+/*
+.video-player div, .video-player figcaption {
 	display: table-cell;
 	vertical-align: top;
-	max-height: 360px;
+	max-height: 450px;
 	max-width: 1000px;
 	overflow: auto;
 
 }
-#video_container video {
+.video-container video {
 	position: absolute;
 	display: block;
 	width: 100%;
 	height: 100%;
 	top: 0;
 }
+*/
 
-#video_player figcaption { width: 25%; }
-#video_player figcaption a { display: block; }
-#video_player figcaption a {
+/*
+.video-player figcaption { width: 25%; }
+.video-player figcaption a { display: block; }
+.video-player figcaption a {
 	opacity: .5;
 	transition: 1s opacity;
 }
-#video_player figcaption a img, figure video {
+.video-player figcaption a img, figure video {
 	width: 100%; height: auto;
 }
-#video_player figcaption a.currentvid, #video_player figcaption a:hover,
-#video_player figcaption a:focus { opacity: 1; }
+.video-player figcaption a.current-vid, .video-player figcaption a:hover,
+.video-player figcaption a:focus { opacity: 1; }
+*/
 @media (max-width: 700px) {
-	#video_player video, #video_player figcaption {
+	.video-player video, .video-player figcaption {
 		display: table-row;
 	}
-	#video_container { padding-top: 56.25%; }
-	#video_player figcaption a {
+	.video-container { padding-top: 56.25%; }
+	.video-player figcaption a {
 		display: inline-block; width: 33.33%;
 	}
 }
