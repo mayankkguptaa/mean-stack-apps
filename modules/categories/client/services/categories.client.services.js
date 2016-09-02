@@ -31,7 +31,7 @@
 
   function MaterialsService($resource) {
     return $resource('api/materials/:materialId', {
-      materialId: '@_materialId'
+      materialId: '@_id'
     }, {
       update: {
         method: 'PUT'

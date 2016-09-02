@@ -43,7 +43,7 @@ exports.read = function (req, res) {
 exports.materialList = function (req, res) {
   var category = req.category;
 
-  Material.find({ category: category._id }).sort({ week: 1, order: 1 }).exec(function (err, materials) {
+  Material.find({ category: category._id }).exec(function (err, materials) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)

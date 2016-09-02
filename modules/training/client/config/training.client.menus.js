@@ -13,11 +13,13 @@
       state: 'training.home',
       roles: ['*']
     });
+
     menuService.addMenuItem('topbar', {
       title: 'Examination',
       state: 'examination.home',
       roles: ['*']
     });
+
     menuService.addMenuItem('topbar', {
       title: 'Recruitment',
       state: 'recruitment.home',

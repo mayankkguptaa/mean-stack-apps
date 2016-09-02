@@ -5,9 +5,9 @@
     .module('categories')
     .controller('CategoriesController', CategoriesController);
 
-  CategoriesController.$inject = ['$scope', '$state', 'categoryResolve', '$window', 'Authentication', 'MaterialsService', '$uibModal', '$log', 'CategoriesService'];
+  CategoriesController.$inject = ['$scope', '$state', 'categoryResolve', '$window', 'Authentication', 'CategoriesService', '$uibModal', '$log'];
 
-  function CategoriesController($scope, $state, category, $window, Authentication, MaterialsService, $uibModal, $log, CategoriesService) {
+  function CategoriesController($scope, $state, category, $window, Authentication, CategoriesService, $uibModal, $log) {
     var vm = this;
 
     vm.category = category;
@@ -17,38 +17,33 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-    vm.modalOpen = function (size) {
+    vm.open = function (size, material) {
       var modalInstance = $uibModal.open({
         animation: true,
-        templateUrl: 'modules/categories/client/views/form-material-modal.client.view.html',
-        controller: 'ModalInstanceCtrl',
+        ariaLabelledBy: 'modal-title',
+        ariaDescribedBy: 'modal-body',
+        templateUrl: 'modules/categories/client/views/add-material-modal.client.view.html',
+        controller: 'AddMaterialModalController',
         controllerAs: 'vm',
         size: size,
         resolve: {
-          MaterialResolve: newMaterial,
-          CategoryResolve: vm.category
+          materialResolve: material
         }
       });
 
       modalInstance.result.then(function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
-
-      newMaterial.$inject = ['MaterialsService'];
-
-      function newMaterial(MaterialsService) {
-        return new MaterialsService;
-      }
     };
 
-    // Remove existing Article
+  // Remove existing Category
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
         vm.category.$remove($state.go('admin.categories.list'));
       }
     }
 
-    // Save Article
+    // Save Category
     function save(isValid) {
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.categoryForm');
@@ -75,54 +70,87 @@
 
   angular
     .module('categories')
-    .controller('ModalInstanceCtrl', ModalInstanceCtrl);
+    .controller('AddMaterialModalController', AddMaterialModalController);
 
-  ModalInstanceCtrl.$inject = ['$uibModalInstance', 'MaterialResolve', 'CategoryResolve', 'CategoriesService', '$scope', '$window', '$state'];
+  AddMaterialModalController.$inject = ['$uibModalInstance', 'materialResolve', 'FileUploader', '$window', '$timeout'];
 
-  function ModalInstanceCtrl($uibModalInstance, material, category, CategoriesService, $scope, $window, $state) {
+  function AddMaterialModalController($uibModalInstance, material, FileUploader, $window, $timeout) {
     var vm = this;
 
-    vm.categories = CategoriesService.query();
     vm.material = material;
-    vm.material.category = category._id;
-    vm.material.week = '1';
+    vm.uploadMaterial = uploadMaterial;
+    vm.fileURL = '';
+    vm.cancelUpload = cancelUpload;
 
-    vm.cancel = function () {
+    vm.closeModal = function () {
       $uibModalInstance.dismiss('cancel');
     };
 
-    vm.save = save;
-    vm.remove = remove;
-    vm.error = null;
-    vm.form = {};
+    // Create file uploader instance
+    vm.uploader = new FileUploader({
+      url: 'api/materials/' + vm.material._id,
+      alias: 'newMaterial',
+      onAfterAddingFile: onAfterAddingFile,
+      onSuccessItem: onSuccessItem,
+      onErrorItem: onErrorItem
+    });
 
-    function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
-        vm.material.$remove();
+    // Set file uploader image filter
+    vm.uploader.filters.push({
+      name: 'fileFilter',
+      fn: function (item, options) {
+        var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
+        return '|mp4|avi|mkv|pdf|'.indexOf(type) !== -1;
+      }
+    });
+
+    // Called after the user selected a new picture file
+    function onAfterAddingFile(fileItem) {
+      if ($window.FileReader) {
+        var fileReader = new FileReader();
+        fileReader.readAsDataURL(fileItem._file);
+
+        fileReader.onload = function (fileReaderEvent) {
+          $timeout(function () {
+            vm.fileURL = fileReaderEvent.target.result;
+          }, 0);
+        };
       }
     }
 
-    function save(isValid) {
-      if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'vm.form.materialForm');
-        return false;
-      }
+    // Called after the user has successfully uploaded a new picture
+    function onSuccessItem(fileItem, response, status, headers) {
+      // Show success message
+      vm.success = true;
 
-      if (vm.material._id) {
-        vm.material.$update(successCallback, errorCallback);
-      } else {
-        vm.material.$save(successCallback, errorCallback);
-      }
+      vm.material = response;
 
-      function successCallback(res) {
-        $state.go('admin.categories.view', {
-          categoryId: res.material.category
-        });
-      }
+      // Clear upload buttons
+      cancelUpload();
+    }
 
-      function errorCallback(res) {
-        vm.error = res.data.message;
-      }
+    // Called after the user has failed to uploaded a new picture
+    function onErrorItem(fileItem, response, status, headers) {
+      // Clear upload buttons
+      cancelUpload();
+
+      // Show error message
+      vm.error = response.message;
+    }
+
+    // Change user profile picture
+    function uploadMaterial() {
+      // Clear messages
+      vm.success = vm.error = null;
+
+      // Start upload
+      vm.uploader.uploadAll();
+    }
+
+    // Cancel the upload process
+    function cancelUpload() {
+      vm.uploader.clearQueue();
+      vm.fileURL = '';
     }
   }
 }());

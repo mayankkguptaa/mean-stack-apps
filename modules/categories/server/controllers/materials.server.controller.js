@@ -7,50 +7,9 @@ var path = require('path'),
   mongoose = require('mongoose'),
   Material = mongoose.model('Material'),
   Category = mongoose.model('Category'),
-  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
-
-/**
- * Add material to a category
- * @param req
- * @param res
- */
-exports.create = function (req, res) {
-  var material = new Material();
-
-  material.title = req.body.title;
-  material.description = req.body.description;
-  material.category = req.body.category;
-  material.week = req.body.week;
-  material.order = req.body.order;
-
-  material.save(function (err) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    }
-
-    res.json(material);
-  });
-};
-
-/**
- * Get the list of materials in a particular category
- * @param req
- * @param res
- */
-exports.list = function (req, res) {
-
-  Material.find().populate('category').exec(function (err, materials) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    }
-
-    res.json(materials);
-  });
-};
+  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
+  multer = require('multer'),
+  config = require(path.resolve('./config/config'));
 
 /**
  * Get a particular material
@@ -64,25 +23,67 @@ exports.read = function (req, res) {
 };
 
 /**
- * Update the material properties
+ * Add content to a day
  * @param req
  * @param res
  */
-exports.update = function (req, res) {
-  var material = req.material;
+exports.addContent = function (req, res) {
+  var material = req.material,
+    content = {},
+    upload = multer(config.uploads.materialUpload).single('newMaterial'),
+    materialUploadFileFilter = require(path.resolve('./config/lib/multer')).materialUploadFileFilter;
 
-  res.json(material);
+  // console.log(req);
+
+  upload.fileFilter = materialUploadFileFilter;
+
+  if (material) {
+    upload(req, res, function (uploadError) {
+      if (uploadError) {
+        return res.status(400).send({
+          message: 'Error occurred while uploading file'
+        });
+      } else {
+        console.log(req.file);
+        if (req.file.mimetype === 'application/pdf') {
+          content.type = 'doc';
+        } else {
+          content.type = 'video';
+        }
+        content.body = config.uploads.materialUpload.dest + req.file.filename;
+
+        material.contents.push(content);
+
+        material.save(function (saveError) {
+          if (saveError) {
+            return res.status(400).send({
+              message: errorHandler.getErrorMessage(saveError)
+            });
+          }
+          material.latestContent = content;
+          res.json(material);
+        });
+      }
+    });
+  } else {
+    res.status(400).send({
+      message: 'No material found'
+    });
+  }
 };
 
 /**
- * Remove material from a category
+ * Remove material content from a day
  * @param req
  * @param res
  */
-exports.delete = function (req, res) {
-  var material = req.material;
+exports.deleteContent = function (req, res) {
+  var material = req.material,
+    contentId = req.body.contentId;
 
-  material.remove(function (err) {
+  material.content.id(contentId).remove();
+
+  material.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -120,6 +121,7 @@ exports.materialByID = function (req, res, next, id) {
       });
     } else {
       req.material = material;
+      next();
     }
   });
 };

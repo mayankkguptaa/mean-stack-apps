@@ -6,38 +6,30 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
+var ContentSchema = new Schema({
+  type: {
+    type: String,
+    enum: ['video', 'doc']
+  },
+  body: String,
+  created: {
+    type: Date,
+    default: Date.now()
+  }
+});
+
 /**
  * Material Schema
  */
 var MaterialSchema = new Schema({
-  title: {
-    type: String,
-    required: 'Title is required'
+  day: {
+    type: Number
   },
-  description: {
-    type: String,
-    required: 'Description is required'
-  },
-  path: {
-    type: String
-  },
-  requiredDuration: Number,
-  order: {
-    type: Number,
-    unique: 'Material at this order already present',
-    required: 'Order no. is required'
-  },
-  week: {
-    type: Number,
-    enum: [1, 2, 3, 4],
-    required: 'Week is required'
-  },
+  contents: [ContentSchema],
   category: {
     type: Schema.ObjectId,
     ref: 'Category'
   }
 });
-
-MaterialSchema.index({ week: 1, order: 1 });
 
 mongoose.model('Material', MaterialSchema);
