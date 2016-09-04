@@ -46,6 +46,10 @@
         data: {
           pageTitle: 'Training - Payment'
         }
+      })
+      .state('training.termsAndConditionsTraining', {
+        url: '/training-terms-and-conditions',
+        templateUrl: 'modules/training/client/views/training-terms-and-conditions.client.view.html'        
       });
   }
 }());
