@@ -1,3 +1,4 @@
+/*
 (function() {
   var video_player = document.getElementById('video_player');
   var video = video_player.getElementsByTagName('video')[0];
@@ -86,3 +87,4 @@
     }
   });
 }());
+*/

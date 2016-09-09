@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="modules/users/client/css/user-profile.css">
+
+<section class="user-profile">
+  <div class="container-fluid">
+    <div class="col-lg-12 full-screen">
+      <div class="row">
+
+
+        <div class="user-profile-details">
+          <div class="col-lg-2">
+            <img ng-src="{{vm.user.profileImageURL}}" class="profile-circle user-profile-image pull-left"/>
+          </div>
+
+          <div class="col-lg-8">
+
+            <h3>{{vm.user.displayName}} <span class="user-profile-username">({{vm.user.username}})</span></h3>
+            <p ng-bind="vm.user.mobile"></p>
+
+
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</section>

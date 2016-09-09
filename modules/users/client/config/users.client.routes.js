@@ -141,6 +141,12 @@
         templateUrl: 'modules/users/client/views/dashboard/dashboard-training.client.view.html',
         controller: 'DashboardTrainingController',
         controllerAs: 'vm'
+      })
+      .state('userProfile', {
+        url: '/my-profile',
+        templateUrl: 'modules/users/client/views/dashboard/user-profile.client.view.html',
+        controller: 'UserProfileController',
+        controllerAs: 'vm'
       });
   }
 }());

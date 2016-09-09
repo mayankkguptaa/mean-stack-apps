@@ -6,6 +6,7 @@
 
 .category-image {
 	width: 10%;
+	background: lightgrey;
 	background: rgba(250, 250, 250, 0.71);
 	outline: #cdcdcd double 6px;
 	outline-offset: 2px;

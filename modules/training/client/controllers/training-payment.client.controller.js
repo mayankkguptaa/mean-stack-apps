@@ -15,7 +15,7 @@
     vm.paymentDone = paymentDone;
 
     function paymentDone() {
-      $state.go('dashboard.training');
+      $state.go('userProfile');
     }
   }
 }());

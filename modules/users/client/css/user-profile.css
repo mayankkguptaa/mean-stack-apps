@@ -1,0 +1,28 @@
+.user-profile-image {
+	border-radius: 50%;
+	border: 2px solid darkgrey;
+	margin-top: 20px;
+}
+
+.user-profile-details {
+	padding-left: 20px;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 16px;
+	color: darkgrey;
+}
+
+.user-profile-details h3 {
+	color: #D55256;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+}
+
+.user-profile-username {
+	color: #003442;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 20px;
+}
+
+.abc {
+	border: 1px solid black;
+}

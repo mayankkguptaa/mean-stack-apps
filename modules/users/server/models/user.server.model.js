@@ -44,7 +44,7 @@ var UserSchema = new Schema({
     type: String,
     trim: true
   },
-  contact: {
+  mobile: {
     type: String,
     trim: true
   },
@@ -58,6 +58,14 @@ var UserSchema = new Schema({
     trim: true,
     default: '',
     validate: [validateLocalStrategyEmail, 'Please fill a valid email address']
+  },
+  gender: {
+    type: String,
+    trim: true
+  },
+  dob: {
+    type: Date,
+    trim: true
   },
   username: {
     type: String,
