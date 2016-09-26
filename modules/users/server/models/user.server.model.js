@@ -64,7 +64,7 @@ var UserSchema = new Schema({
     trim: true
   },
   dob: {
-    type: Date,
+    type: String,
     trim: true
   },
   username: {

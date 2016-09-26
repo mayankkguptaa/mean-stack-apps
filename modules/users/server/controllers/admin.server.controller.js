@@ -34,6 +34,7 @@ exports.update = function (req, res) {
   user.roles = req.body.roles;
   user.profileImageURL = req.body.profileImageURL;
 
+
   user.save(function (err) {
     if (err) {
       return res.status(400).send({

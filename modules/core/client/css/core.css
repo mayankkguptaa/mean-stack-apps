@@ -14,6 +14,18 @@
 	padding-left: 0;
 	padding-right: 0;
 }
+
+.vanitycube-btn {
+	color: white;
+	background: #D55256;
+	border-radius: 10%;
+}
+.vanitycube-btn:hover {
+	color: white;
+	background: #b9474b;
+	border-radius: 10%;
+}
+
 html, body, .container-fluid {
 	height: 100%;
 	width: 100%;

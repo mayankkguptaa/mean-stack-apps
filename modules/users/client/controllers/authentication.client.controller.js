@@ -16,6 +16,27 @@
     vm.signin = signin;
     vm.callOauthProvider = callOauthProvider;
 
+    vm.dateOptions = {
+      formatYear: 'yyyy',
+      maxDate: new Date(),
+      minDate: new Date(1, 1, 1950),
+      startingDay: 1
+    };
+
+    vm.open1 = function() {
+      vm.popup1.opened = true;
+    };
+
+    vm.setDate = function(day, month, year) {
+      vm.dt = new Date(day, month, year);
+    };
+
+    vm.format = 'dd-MMMM-yyyy';
+
+    vm.popup1 = {
+      opened: false
+    };
+
     // Get an eventual error defined in the URL query string:
     vm.error = $location.search().err;
 
